@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>烘豆师 · 面向咖啡烘焙从业者的本地库存管理 App</title>
+  <meta name="description" content="烘豆师是一款面向咖啡烘焙从业者的本地库存管理 App，100% 本地存储、离线 OCR 标签识别、双计量库存、烘焙转化与毛利定价、订单与客户账本、AES-256 加密备份。Flutter 跨 Android / iOS。">
+  <meta name="theme-color" content="#B5793E">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/img/logo.svg">
+  <meta property="og:title" content="烘豆师 · 本地咖啡库存管理 App">
+  <meta property="og:description" content="100% 本地存储 · 离线 OCR · 双计量库存 · 烘焙转化与毛利定价">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============== 导航 ============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" aria-label="烘豆师 首页">
+      <img src="assets/img/logo.svg" alt="" width="28" height="28">
+      <span>烘豆师</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">特性</a></li>
+      <li><a href="#screenshots">截图</a></li>
+      <li><a href="#privacy">数据安全</a></li>
+      <li><a href="#platform">平台</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============== Hero ============== -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <img class="hero-logo" src="assets/img/logo.svg" alt="烘豆师 Logo" width="80" height="80">
+      <span class="version-badge">v<span data-version>0.2.9</span> · 持续迭代</span>
+      <h1>咖啡烘焙，从这一本账开始</h1>
+      <p class="lead">
+        面向咖啡烘焙从业者的本地生豆 / 烘焙豆库存管理 App。
+        业务数据只存本机，离线 OCR 自动识别生豆袋标签，袋·kg 双计量与临期预警，
+        烘焙转化、拼配成本与毛利定价一站完成。
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">
+          ↓ 查看 Release 下载
+        </a>
+      </div>
+      <p class="text-muted mt-4" style="font-size:.9rem;">
+        Flutter 跨端构建 · Android 12+ / iOS 16+
+      </p>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="phone-frame">
+        <img src="assets/img/screenshots/roasted-list.png" alt="烘焙豆库存列表" loading="eager">
+      </div>
+      <div class="phone-frame">
+        <img src="assets/img/screenshots/onboard.png" alt="首启引导" loading="lazy">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============== 核心特性 ============== -->
+<section id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">核心特性</span>
+      <h2>把烘焙工坊装进口袋</h2>
+      <p>六类核心能力，全部围绕"本地优先 + 业务闭环"设计，不依赖任何云服务即可独立运行。</p>
+    </div>
+    <div class="features">
+
+      <article class="feature">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 L4 6 v6 c0 5 3.5 9 8 10 4.5-1 8-5 8-10 V6 z"/>
+            <path d="M9 12 l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3>100% 本地优先</h3>
+        <p>业务数据全部落本地 SQLite，社群版本不声明 INTERNET 权限；备份走应用文档目录，换机导入即可恢复。</p>
+      </article>
+
+      <article class="feature">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <path d="M3 10 h18 M9 4 v16"/>
+          </svg>
+        </div>
+        <h3>双计量库存</h3>
+        <p>生豆按 kg 计量，烘焙豆按「袋 · kg」双计量并行。呆滞、过期、临期与低库存多档预警，盘点草稿可分段保存后原子提交。</p>
+      </article>
+
+      <article class="feature">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12 a9 9 0 0 1 18 0"/>
+            <path d="M7 14 c0 3 2 5 5 5 s5-2 5-5"/>
+            <circle cx="12" cy="9" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3>烘焙转化与毛利</h3>
+        <p>生豆多行拼配投入，自动核算失重比与单位成本；按目标毛利率反推建议售价，给出 ±5% 参考区间。</p>
+      </article>
+
+      <article class="feature">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6 h2 l2 12 h12 l2-9 H7"/>
+            <circle cx="9" cy="20" r="1.5" fill="currentColor"/>
+            <circle cx="17" cy="20" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3>订单与客户账本</h3>
+        <p>现货销售立即发货，预售订单走"冻结→排产→履约分配"；客户充值/消费/退款流水可重放校验，扫码即销售。</p>
+      </article>
+
+      <article class="feature">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="18" height="13" rx="2"/>
+            <circle cx="12" cy="12.5" r="3.5"/>
+            <path d="M8 6 l1.5-2 h5 L16 6"/>
+          </svg>
+        </div>
+        <h3>离线 OCR 标签识别</h3>
+        <p>内置 PaddleOCR 端侧推理，图片不上传任何服务器。识别字段以候选形式预填，逐字段核对，不静默覆盖。</p>
+      </article>
+
+      <article class="feature">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="11" width="16" height="9" rx="2"/>
+            <path d="M8 11 V7 a4 4 0 0 1 8 0 v4"/>
+          </svg>
+        </div>
+        <h3>数据可回放</h3>
+        <p>全库存以流水为真相源；备份可选 AES-256-GCM 口令加密（PBKDF2 20 万次迭代），恢复门禁拒绝任何旁路写入。</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== 截图 ============== -->
+<section id="screenshots" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">界面预览</span>
+      <h2>真实界面，不是渲染稿</h2>
+      <p>以下截图为模拟器实际运行画面，展示 App 在日常烘焙场景中的关键页面。</p>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+        <div class="frame"><img src="assets/img/screenshots/onboard.png" alt="首启引导" loading="lazy"></div>
+        <figcaption class="caption">首启引导 · 3 屏介绍</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><img src="assets/img/screenshots/roasted-list.png" alt="烘焙豆库存" loading="lazy"></div>
+        <figcaption class="caption">烘焙豆库存 · 批次 + 规格双计量</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><img src="assets/img/screenshots/roast-convert.png" alt="烘焙入库" loading="lazy"></div>
+        <figcaption class="caption">生豆烘焙入库 · 拼配 + 成本核算</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><img src="assets/img/screenshots/orders.png" alt="订单列表" loading="lazy"></div>
+        <figcaption class="caption">订单工作台 · 现货/预售双通道</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 数据安全 ============== -->
+<section id="privacy">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">数据安全与隐私</span>
+      <h2>你的咖啡数据，只属于你</h2>
+      <p>从设计上就拒绝"云端"——业务数据全程在设备本地流转，可验证、可导出、可加密。</p>
+    </div>
+    <div class="privacy">
+      <div class="privacy-item">
+        <h3><span class="check">✓</span> 社群版不申请网络权限</h3>
+        <p>Android 社群渠道构建不声明 <code>INTERNET</code> 权限，从系统层面禁用数据上传。</p>
+      </div>
+      <div class="privacy-item">
+        <h3><span class="check">✓</span> 备份可选口令加密</h3>
+        <p>AES-256-GCM（PBKDF2-HMAC-SHA256 · 20 万次迭代），忘记口令无法找回——这是设计而非缺陷。</p>
+      </div>
+      <div class="privacy-item">
+        <h3><span class="check">✓</span> 无埋点、无遥测、无广告</h3>
+        <p>没有第三方 SDK、没有统计上报、没有推送。错误日志仅本地保留最近 50 条，可手动导出。</p>
+      </div>
+      <div class="privacy-item">
+        <h3><span class="check">✓</span> 账本可回放校验</h3>
+        <p>全库存以不可变流水为真相源，导出/恢复时往返校验账实一致；恢复门禁拒绝一切旁路写入。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 平台 ============== -->
+<section id="platform" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">跨端与平台</span>
+      <h2>一份代码，两个平台</h2>
+      <p>Flutter / Dart 一套代码同时构建 Android 与 iOS 原生应用；UI 遵循 Material 3，支持浅色 / 深色主题与系统跟随。</p>
+    </div>
+    <div class="platform-grid">
+      <div class="platform">
+        <div class="lbl">框架</div>
+        <div class="val">Flutter 3.44</div>
+        <div class="sub">Dart 3.12 · Material 3</div>
+      </div>
+      <div class="platform">
+        <div class="lbl">Android</div>
+        <div class="val">12+</div>
+        <div class="sub">API 31 · 离线 OCR 端侧推理</div>
+      </div>
+      <div class="platform">
+        <div class="lbl">iOS</div>
+        <div class="val">16.0+</div>
+        <div class="sub">App Store / TestFlight 渠道</div>
+      </div>
+      <div class="platform">
+        <div class="lbl">持久化</div>
+        <div class="val">SQLite</div>
+        <div class="sub">sqflite 事务落盘 + 备份 JSON</div>
+      </div>
+      <div class="platform">
+        <div class="lbl">OCR</div>
+        <div class="val">PaddleOCR</div>
+        <div class="sub">ONNX Runtime + OpenCV（端侧）</div>
+      </div>
+      <div class="platform">
+        <div class="lbl">加密</div>
+        <div class="val">AES-256-GCM</div>
+        <div class="sub">PBKDF2 · 20 万次迭代</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 下载 ============== -->
+<section id="download">
+  <div class="container">
+    <div class="download">
+      <span class="eyebrow">下载与联系</span>
+      <h2>把烘豆师带进你的工坊</h2>
+      <p class="meta">当前版本 v<span data-version>0.2.9</span> · Android / iOS 双端</p>
+      <div class="btn-row" style="justify-content:center;">
+        <a class="btn btn-primary" href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">
+          ↓ 查看 Release 页面下载 APK
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/wuyi-levard/bean-roaster-site" target="_blank" rel="noopener">
+          查看源码仓库
+        </a>
+      </div>
+      <div class="contact-card">
+        <span>微信：<span class="wx">levard2012</span></span>
+        <button type="button" class="copy" data-copy="levard2012" aria-label="复制微信号">复制</button>
+      </div>
+      <p class="text-muted mt-4" style="font-size:.88rem;">
+        社群版需通过"设置 → 专业版权益"导入开发者签发的离线授权码；正式门禁与签发机说明见
+        <a href="https://github.com/wuyi-levard/bean-roaster-site/blob/main/README.md" target="_blank" rel="noopener">README</a>。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Footer ============== -->
+<footer>
+  <div class="container">
+    <div class="links">
+      <a href="#top">回到顶部</a>
+      <a href="https://github.com/wuyi-levard/bean-roaster-site" target="_blank" rel="noopener">源码仓库</a>
+      <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">下载 Release</a>
+    </div>
+    <div>© <span data-year>2026</span> 烘豆师 · 由咖啡烘焙从业者与开发者共同维护</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

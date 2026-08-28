@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="烘豆师">
+  <defs>
+    <linearGradient id="bean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B5793E"/>
+      <stop offset="100%" stop-color="#8C5A2B"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="32" cy="32" rx="22" ry="28" fill="url(#bean)" transform="rotate(-22 32 32)"/>
+  <path d="M19 12 C 24 32, 24 32, 19 52" stroke="#3A2614" stroke-width="2.4" stroke-linecap="round" fill="none" transform="rotate(-22 32 32)"/>
+  <path d="M20 18 C 25 24, 27 32, 25 42" stroke="#5A3A1F" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5" transform="rotate(-22 32 32)"/>
+</svg>
