@@ -349,6 +349,62 @@ section { padding: clamp(56px, 8vw, 96px) 0; }
 .privacy-item p  { font-size: .94rem; margin: 0; }
 .privacy-item .check { color: var(--green-bean); }
 
+/* ---------- 专业版权益 ---------- */
+.pro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+  align-items: stretch;
+}
+.pro-col {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.pro-paid {
+  border-color: var(--brand);
+  border-width: 1.5px;
+  box-shadow: 0 0 0 4px var(--brand-soft);
+}
+.pro-head { margin-bottom: 18px; }
+.pro-head h3 { margin: 10px 0 0; font-size: 1.2rem; }
+.pro-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+.tag-free { background: var(--line); color: var(--ink-2); }
+.tag-paid { background: var(--brand); color: #fff; }
+.pro-list { list-style: none; margin: 0; padding: 0; flex: 1; }
+.pro-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 0;
+  font-size: .96rem;
+  color: var(--ink-2);
+  border-bottom: 1px dashed var(--line);
+}
+.pro-list li:last-child { border-bottom: 0; }
+.pro-list .dot { color: var(--brand-strong); font-weight: 700; flex: 0 0 auto; }
+.pro-list-paid li { color: var(--ink); font-weight: 500; }
+.pro-list-paid .dot { color: var(--brand); }
+.pro-note {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: .84rem;
+  color: var(--ink-3);
+  line-height: 1.6;
+}
+
 /* ---------- 平台表 ---------- */
 .platform-grid {
   display: grid;
