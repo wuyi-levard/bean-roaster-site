@@ -20,11 +20,6 @@
   --ok:           #5E8C5A;
   --gold:         #C99A3F;
   --line:         rgba(46, 33, 26, 0.10);
-  /* 版本徽章：浅色下需足够对比度（#7A4E23 on #F7EBDA ≈ 6.0:1） */
-  --badge-bg:       #F7EBDA;
-  --badge-ink:      #7A4E23;
-  --badge-line:     rgba(140, 90, 43, 0.32);
-  --badge-dot-halo: rgba(181, 121, 62, 0.22);
   --radius:       16px;
   --radius-lg:    24px;
   --radius-pill:  999px;
@@ -49,11 +44,6 @@
     --ink-3:     #8A7A6A;
     --line:      rgba(241, 231, 216, 0.10);
     --brand-soft:#3D2A18;
-    /* 暗色徽章：#E8B979 on #3D2A18 ≈ 7.5:1 */
-    --badge-bg:       #3D2A18;
-    --badge-ink:      #E8B979;
-    --badge-line:     rgba(232, 185, 121, 0.30);
-    --badge-dot-halo: rgba(232, 185, 121, 0.20);
     --shadow:    0 6px 20px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.5);
   }
@@ -236,36 +226,6 @@ section { padding: clamp(56px, 8vw, 96px) 0; }
 }
 .hero h1 { margin-bottom: 18px; }
 .hero .lead { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--ink-2); max-width: 560px; }
-.version-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background: var(--badge-bg);
-  color: var(--badge-ink);
-  border: 1px solid var(--badge-line);
-  border-radius: var(--radius-pill);
-  font-size: .92rem;
-  font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 18px;
-  vertical-align: middle;
-}
-/* 文案整体作为单个 flex item，避免 gap 插入到 "v / 0.2.9 / · 持续迭代" 之间 */
-.version-badge .badge-text {
-  white-space: nowrap;
-  letter-spacing: .01em;
-  font-variant-numeric: tabular-nums;
-}
-.version-badge::before {
-  content: "";
-  flex: 0 0 auto;
-  width: 7px;
-  height: 7px;
-  background: var(--brand);
-  border-radius: 50%;
-  box-shadow: 0 0 0 3px var(--badge-dot-halo);
-}
 .hero-visual {
   position: relative;
   display: flex;
@@ -325,7 +285,7 @@ section { padding: clamp(56px, 8vw, 96px) 0; }
 .feature:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow);
-  border-color: var(--badge-line);
+  border-color: var(--brand);
   border-color: color-mix(in srgb, var(--brand) 30%, var(--line));
 }
 .feature .ico {
