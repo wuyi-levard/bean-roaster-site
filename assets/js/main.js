@@ -1,8 +1,97 @@
 /* 烘豆师介绍站 · 客户端脚本
-   仅做 3 件事：复制微信号 / 平滑滚动兜底 / 二维码弹层。 */
+   职责：主题三档切换 / 语言切换 / 复制微信号 / 平滑滚动兜底 / 反馈表单跳转。 */
 
 (function () {
   'use strict';
+
+  var THEME_KEY = 'hds-theme';
+  var THEMES = ['auto', 'light', 'dark'];
+  /* 主题按钮无障碍标签的简体原文（切回简体时使用） */
+  var THEME_LABEL_DEFAULT = {
+    auto: '主题：跟随系统',
+    light: '主题：浅色',
+    dark: '主题：深色'
+  };
+  var THEME_ICON = { auto: '🖥️', light: '☀️', dark: '🌙' };
+
+  var curLang = 'zh-CN';
+
+  /* 取当前语言下的文案：非简体时查词典，否则用传入的简体原文 */
+  function L(key, fallback) {
+    var v = (curLang !== 'zh-CN' && window.HDS) ? window.HDS.t(curLang, key) : null;
+    return v === null || v === undefined ? fallback : v;
+  }
+
+  // ---------- 主题：跟随系统 / 浅色 / 深色 ----------
+  function readTheme() {
+    try {
+      var t = localStorage.getItem(THEME_KEY);
+      if (t && THEMES.indexOf(t) >= 0) return t;
+    } catch (e) { /* localStorage 不可用时回退跟随系统 */ }
+    return 'auto';
+  }
+
+  function saveTheme(t) {
+    try { localStorage.setItem(THEME_KEY, t); } catch (e) { /* 忽略 */ }
+  }
+
+  function applyTheme(t) {
+    if (t === 'auto') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', t);
+    var btn = document.querySelector('[data-theme-toggle]');
+    if (!btn) return;
+    var label = (curLang !== 'zh-CN' && window.HDS && window.HDS.t(curLang, 'ctl.theme.' + t)) || THEME_LABEL_DEFAULT[t];
+    btn.setAttribute('aria-label', label);
+    btn.setAttribute('title', label);
+    btn.setAttribute('data-state', t);
+    var ico = btn.querySelector('[data-theme-icon]');
+    if (ico) ico.textContent = THEME_ICON[t];
+  }
+
+  function setupTheme() {
+    var btn = document.querySelector('[data-theme-toggle]');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var cur = readTheme();
+      var next = THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length];
+      saveTheme(next);
+      applyTheme(next);
+    });
+    applyTheme(readTheme());
+  }
+
+  // ---------- 语言 ----------
+  function setupLang() {
+    if (!window.HDS) return;
+    curLang = window.HDS.readLang();
+    /* 先跑一次以建立简体原文快照（即使当前就是简体） */
+    window.HDS.applyLang(curLang);
+
+    var sel = document.querySelector('[data-lang-select]');
+    if (sel) {
+      sel.value = curLang;
+      sel.addEventListener('change', function () {
+        curLang = sel.value;
+        window.HDS.saveLang(curLang);
+        window.HDS.applyLang(curLang);
+        /* 语言变化后刷新主题按钮的无障碍标签 */
+        applyTheme(readTheme());
+        refreshCopyLabels();
+      });
+    }
+  }
+
+  /* 复制按钮文案随语言刷新（按钮文字由 JS 改写，需单独处理） */
+  function copyText(lang, key, fallback) {
+    var v = (lang !== 'zh-CN' && window.HDS) ? window.HDS.t(lang, key) : null;
+    return v === null || v === undefined ? fallback : v;
+  }
+  function refreshCopyLabels() {
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      if (btn.dataset.busy === '1') return;
+      btn.textContent = copyText(curLang, 'dl.copy', '复制');
+    });
+  }
 
   // ---------- 复制微信号 ----------
   function setupCopy() {
@@ -11,9 +100,15 @@
         var text = btn.getAttribute('data-copy');
         var ok = function () {
           var orig = btn.textContent;
-          btn.textContent = '已复制';
+          btn.dataset.busy = '1';
+          btn.textContent = copyText(curLang, 'copy.done', '已复制');
           btn.classList.add('ok');
-          setTimeout(function () { btn.textContent = orig; btn.classList.remove('ok'); }, 1600);
+          setTimeout(function () {
+            btn.textContent = copyText(curLang, 'dl.copy', '复制');
+            btn.classList.remove('ok');
+            btn.dataset.busy = '0';
+            void orig;
+          }, 1600);
         };
         var fallback = function () { window.prompt('复制下面的微信号：', text); };
         if (navigator.clipboard && window.isSecureContext) {
@@ -48,12 +143,14 @@
     });
   }
 
-  // ---------- 当前版本号注入 ----------
+  // ---------- 版本号 / 年份 ----------
   function setupVersion() {
-    var el = document.querySelectorAll('[data-version]');
-    el.forEach(function (n) { n.textContent = n.getAttribute('data-version'); });
-    var year = document.querySelectorAll('[data-year]');
-    year.forEach(function (n) { n.textContent = new Date().getFullYear(); });
+    document.querySelectorAll('[data-version]').forEach(function (n) {
+      n.textContent = n.getAttribute('data-version');
+    });
+    document.querySelectorAll('[data-year]').forEach(function (n) {
+      n.textContent = new Date().getFullYear();
+    });
   }
 
   // ---------- 反馈表单 → 跳转预填 GitHub Issue ----------
@@ -74,22 +171,27 @@
       if (err) err.hidden = true;
 
       var get = function (n) { return (form.querySelector('[name="' + n + '"]') || {}).value || ''; };
-      var type = get('type').trim();
+      /* 类型值是稳定标识符（bug/feature/other），提交文案用本地化标签 */
+      var typeId = get('type').trim();
+      var TYPE_KEY = { bug: 'fb.type.bug', feature: 'fb.type.feat', other: 'fb.type.other' };
+      var TYPE_DEFAULT = { bug: '问题报告 / Bug', feature: '功能建议', other: '其他' };
+      var type = L(TYPE_KEY[typeId] || TYPE_KEY.other, TYPE_DEFAULT[typeId] || TYPE_DEFAULT.other);
       var title = get('title').trim();
       var desc = get('desc').trim();
       var steps = get('steps').trim();
       var contact = get('contact').trim();
       var version = get('version').trim();
 
-      if (!title) { showErr('请填写标题。'); form.querySelector('[name="title"]').focus(); return; }
-      if (!desc) { showErr('请填写详细描述。'); form.querySelector('[name="desc"]').focus(); return; }
+      if (!title) { showErr(L('fb.err.title', '请填写标题。')); form.querySelector('[name="title"]').focus(); return; }
+      if (!desc) { showErr(L('fb.err.desc', '请填写详细描述。')); form.querySelector('[name="desc"]').focus(); return; }
 
-      var body = '类型：' + type + '\n' +
-                 'App 版本：' + (version || '未填写') + '\n\n' +
+      var unfilled = L('fb.body.unfilled', '未填写');
+      var body = L('fb.body.type', '类型：') + type + '\n' +
+                 L('fb.body.ver', 'App 版本：') + (version || unfilled) + '\n\n' +
                  desc + '\n\n' +
-                 (steps ? '复现步骤：\n' + steps + '\n\n' : '') +
-                 (contact ? '联系方式：' + contact + '\n\n' : '') +
-                 '---\n由烘豆师产品介绍站反馈表单提交。';
+                 (steps ? L('fb.body.steps', '复现步骤：') + '\n' + steps + '\n\n' : '') +
+                 (contact ? L('fb.body.contact', '联系方式：') + contact + '\n\n' : '') +
+                 '---\n' + L('fb.body.footer', '由烘豆师产品介绍站反馈表单提交。');
 
       var url = 'https://github.com/' + REPO + '/issues/new' +
                 '?title=' + encodeURIComponent('[' + type + '] ' + title) +
@@ -101,11 +203,18 @@
   }
 
   // ---------- init ----------
+  function init() {
+    setupLang();
+    setupTheme();
+    setupCopy();
+    setupSmoothScroll();
+    setupVersion();
+    setupFeedbackForm();
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      setupCopy(); setupSmoothScroll(); setupVersion(); setupFeedbackForm();
-    });
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    setupCopy(); setupSmoothScroll(); setupVersion(); setupFeedbackForm();
+    init();
   }
 })();

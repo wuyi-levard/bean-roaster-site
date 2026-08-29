@@ -3,22 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>页面未找到 · 烘豆师</title>
+  <title data-i18n-title="t404.title">页面未找到 · 烘豆师</title>
   <meta name="theme-color" content="#B5793E">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('hds-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        var l = localStorage.getItem('hds-lang');
+        if (l === 'zh-TW' || l === 'en') document.documentElement.lang = l;
+      } catch (e) { /* 隐私模式下 localStorage 不可用，忽略 */ }
+    })();
+  </script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <main class="container" style="padding: 120px 0; text-align: center; max-width: 640px;">
-    <img src="assets/img/logo.svg" alt="" width="64" height="64" style="margin: 0 auto 20px; opacity: .85;">
-    <h1 style="font-size: 2.4rem; margin-bottom: 8px;">404</h1>
-    <p>这杯咖啡好像洒了 —— 你访问的页面不存在。</p>
-    <div class="btn-row" style="justify-content: center; margin-top: 24px;">
-      <a class="btn btn-primary" href="index.html">回到首页</a>
-      <a class="btn btn-ghost" href="changelog.html">更新日志</a>
-      <a class="btn btn-ghost" href="feedback.html">反馈</a>
+
+<!-- ============== 导航 ============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="烘豆师 首页">
+      <img src="assets/img/logo.svg" alt="" width="28" height="28">
+      <span>烘豆师</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features" data-i18n="nav.features">特性</a></li>
+      <li><a href="index.html#screenshots" data-i18n="nav.screenshots">截图</a></li>
+      <li><a href="index.html#privacy" data-i18n="nav.privacy">数据安全</a></li>
+      <li><a href="changelog.html" data-i18n="nav.changelog">更新日志</a></li>
+      <li><a href="index.html#platform" data-i18n="nav.platform">平台</a></li>
+      <li><a href="feedback.html" data-i18n="nav.feedback">反馈</a></li>
+    </ul>
+    <div class="nav-ctl">
+      <button class="ctl-btn" type="button" data-theme-toggle aria-label="主题：跟随系统" title="主题：跟随系统">
+        <span class="ctl-icon" data-theme-icon>🖥️</span>
+      </button>
+      <select class="ctl-btn ctl-lang" data-lang-select aria-label="语言" title="语言" data-i18n-aria="ctl.lang">
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW">繁體中文</option>
+        <option value="en">English</option>
+      </select>
     </div>
-  </main>
-  <script src="assets/js/main.js"></script>
+  </div>
+</nav>
+
+<!-- ============== 404 ============== -->
+<main class="container" style="padding: 120px 0; text-align: center; max-width: 640px;">
+  <img src="assets/img/logo.svg" alt="" width="64" height="64" style="margin: 0 auto 20px; opacity: .85;">
+  <h1 style="font-size: 2.4rem; margin-bottom: 8px;">404</h1>
+  <p data-i18n="t404.desc">这杯咖啡好像洒了 —— 你访问的页面不存在。</p>
+  <div class="btn-row" style="justify-content: center; margin-top: 24px;">
+    <a class="btn btn-primary" href="index.html" data-i18n="t404.home">回到首页</a>
+    <a class="btn btn-ghost" href="changelog.html" data-i18n="t404.changelog">更新日志</a>
+    <a class="btn btn-ghost" href="feedback.html" data-i18n="t404.feedback">反馈</a>
+  </div>
+</main>
+
+<!-- ============== Footer ============== -->
+<footer>
+  <div class="container">
+    <div class="links">
+      <a href="index.html" data-i18n="foot.home">回到首页</a>
+      <a href="changelog.html" data-i18n="foot.changelog">更新日志</a>
+      <a href="feedback.html" data-i18n="foot.feedback">反馈</a>
+      <a href="https://github.com/wuyi-levard/bean-roaster-site" target="_blank" rel="noopener" data-i18n="foot.repo">源码仓库</a>
+      <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener" data-i18n="foot.release">下载 Release</a>
+    </div>
+    <div>© <span data-year>2026</span> <span data-i18n="foot.copy">烘豆师 · 保留所有权利</span></div>
+    <div class="foot-sub" data-i18n="foot.nodata">本 App 不收集任何用户数据</div>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

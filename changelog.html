@@ -3,14 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>更新日志 · 烘豆师</title>
-  <meta name="description" content="烘豆师 App 各版本更新记录：离线 OCR 增强、专业版门禁、订单与客户账本、双计量库存、加密备份等能力演进。">
+  <title data-i18n-title="cl.title">更新日志 · 烘豆师</title>
+  <meta name="description" content="烘豆师 App 各版本更新记录：离线 OCR 增强、专业版门禁、订单与客户账本、双计量库存、加密备份等能力演进。" data-i18n-content="cl.desc">
   <meta name="theme-color" content="#B5793E">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <meta property="og:title" content="更新日志 · 烘豆师">
-  <meta property="og:description" content="烘豆师各版本更新记录与能力演进">
+  <meta property="og:title" content="更新日志 · 烘豆师" data-i18n-content="cl.title">
+  <meta property="og:description" content="烘豆师各版本更新记录与能力演进" data-i18n-content="cl.desc">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/logo.svg">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('hds-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        var l = localStorage.getItem('hds-lang');
+        if (l === 'zh-TW' || l === 'en') document.documentElement.lang = l;
+      } catch (e) { /* 隐私模式下 localStorage 不可用，忽略 */ }
+    })();
+  </script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -23,13 +33,23 @@
       <span>烘豆师</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#features">特性</a></li>
-      <li><a href="index.html#screenshots">截图</a></li>
-      <li><a href="index.html#privacy">数据安全</a></li>
-      <li><a href="changelog.html" class="active">更新日志</a></li>
-      <li><a href="index.html#platform">平台</a></li>
-      <li><a href="feedback.html">反馈</a></li>
+      <li><a href="index.html#features" data-i18n="nav.features">特性</a></li>
+      <li><a href="index.html#screenshots" data-i18n="nav.screenshots">截图</a></li>
+      <li><a href="index.html#privacy" data-i18n="nav.privacy">数据安全</a></li>
+      <li><a href="changelog.html" class="active" data-i18n="nav.changelog">更新日志</a></li>
+      <li><a href="index.html#platform" data-i18n="nav.platform">平台</a></li>
+      <li><a href="feedback.html" data-i18n="nav.feedback">反馈</a></li>
     </ul>
+    <div class="nav-ctl">
+      <button class="ctl-btn" type="button" data-theme-toggle aria-label="主题：跟随系统" title="主题：跟随系统">
+        <span class="ctl-icon" data-theme-icon>🖥️</span>
+      </button>
+      <select class="ctl-btn ctl-lang" data-lang-select aria-label="语言" title="语言" data-i18n-aria="ctl.lang">
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW">繁體中文</option>
+        <option value="en">English</option>
+      </select>
+    </div>
   </div>
 </nav>
 
@@ -37,9 +57,9 @@
 <main class="changelog">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">更新日志</span>
-      <h2>烘豆师版本更新记录</h2>
-      <p>以下为公开发布版本的能力演进。最新版本 APK 见 <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">Release 页面</a>。</p>
+      <span class="eyebrow" data-i18n="cl.eyebrow">更新日志</span>
+      <h2 data-i18n="cl.h2">烘豆师版本更新记录</h2>
+      <p data-i18n-html="cl.lead">以下为公开发布版本的能力演进。最新版本 APK 见 <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">Release 页面</a>。</p>
     </div>
 
     <!-- v0.2.10 -->
@@ -47,28 +67,28 @@
       <div class="cl-head">
         <span class="ver">v0.2.10</span>
         <span class="date">2026-08-28</span>
-        <span class="cl-tag">最新</span>
+        <span class="cl-tag" data-i18n="cl.tag.new">最新</span>
       </div>
       <div class="news-grid">
         <div class="news-group">
-          <h3><span class="news-ico">🔍</span> 离线 OCR 大幅增强</h3>
+          <h3 data-i18n="cl.ocr.title"><span class="news-ico">🔍</span> 离线 OCR 大幅增强</h3>
           <ul class="news-list">
-            <li>接入图片预处理与质量兜底识别，脏污、模糊、反光的生豆袋贴也能更稳地识别</li>
-            <li>新增预处理质量评分策略，识别前先评估图质并提示是否需要重拍</li>
-            <li>Android 端新增可回退的几何预矫正，歪斜标签自动拉正</li>
-            <li>新增安全图片预处理变体，处理边界更收敛、更可控</li>
-            <li>新增退化样本设备回归与收敛分析告警，识别质量可量化跟踪</li>
+            <li data-i18n="cl.ocr.1">接入图片预处理与质量兜底识别，脏污、模糊、反光的生豆袋贴也能更稳地识别</li>
+            <li data-i18n="cl.ocr.2">新增预处理质量评分策略，识别前先评估图质并提示是否需要重拍</li>
+            <li data-i18n="cl.ocr.3">Android 端新增可回退的几何预矫正，歪斜标签自动拉正</li>
+            <li data-i18n="cl.ocr.4">新增安全图片预处理变体，处理边界更收敛、更可控</li>
+            <li data-i18n="cl.ocr.5">新增退化样本设备回归与收敛分析告警，识别质量可量化跟踪</li>
           </ul>
         </div>
         <div class="news-group">
-          <h3><span class="news-ico">🔔</span> 专业版门禁体验</h3>
+          <h3 data-i18n="cl.gate.title"><span class="news-ico">🔔</span> 专业版门禁体验</h3>
           <ul class="news-list">
-            <li>未授权功能改用根层弹窗提示，点击即跳转到「专业版权益」入口</li>
+            <li data-i18n="cl.gate.1">未授权功能改用根层弹窗提示，点击即跳转到「专业版权益」入口</li>
           </ul>
-          <h3 class="news-sub"><span class="news-ico">⚙️</span> 工程与发布</h3>
+          <h3 class="news-sub" data-i18n="cl.eng.title"><span class="news-ico">⚙️</span> 工程与发布</h3>
           <ul class="news-list">
-            <li>对齐社群支付依赖边界与 README 测试基线</li>
-            <li>升级至 0.2.10（构建号 214）</li>
+            <li data-i18n="cl.eng.1">对齐社群支付依赖边界与 README 测试基线</li>
+            <li data-i18n="cl.eng.2">升级至 0.2.10（构建号 214）</li>
           </ul>
         </div>
       </div>
@@ -79,53 +99,53 @@
       <div class="cl-head">
         <span class="ver">v0.2.9</span>
         <span class="date">2026-08-28</span>
-        <span class="cl-tag cl-tag-soft">公开发布</span>
+        <span class="cl-tag cl-tag-soft" data-i18n="cl.tag.published">公开发布</span>
       </div>
-      <p class="cl-lede">首个通过产品介绍站公开发布的版本，随附社群版 APK（Android 12+）。包含全部基础库存与数据安全能力，以及专业版五项能力（离线 OCR、客户管理、主动余额操作、预售/排产编辑、袋贴 PDF 导出）的授权门禁框架。</p>
-      <p class="cl-note">完整功能总览见 <a href="index.html#features">首页 · 核心特性</a> 与 <a href="index.html#pro">专业版权益</a>。</p>
+      <p class="cl-lede" data-i18n="cl.v029.lede">首个通过产品介绍站公开发布的版本，随附社群版 APK（Android 12+）。包含全部基础库存与数据安全能力，以及专业版五项能力（离线 OCR、客户管理、主动余额操作、预售/排产编辑、袋贴 PDF 导出）的授权门禁框架。</p>
+      <p class="cl-note" data-i18n-html="cl.v029.note">完整功能总览见 <a href="index.html#features">首页 · 核心特性</a> 与 <a href="index.html#pro">专业版权益</a>。</p>
     </article>
 
     <!-- 早期能力里程碑 -->
     <article class="cl-entry">
       <div class="cl-head">
-        <span class="ver" style="font-size:1.2rem;">早期能力里程碑</span>
-        <span class="cl-tag cl-tag-muted">内部研发阶段</span>
+        <span class="ver" style="font-size:1.2rem;" data-i18n="cl.early.title">早期能力里程碑</span>
+        <span class="cl-tag cl-tag-muted" data-i18n="cl.early.tag">内部研发阶段</span>
       </div>
-      <p class="cl-note">下列为产品能力成型过程中的内部研发里程碑（编号对应开发阶段，并非公开发布版本号）。公开发布自 v0.2.x 起。</p>
+      <p class="cl-note" data-i18n="cl.early.note">下列为产品能力成型过程中的内部研发里程碑（编号对应开发阶段，并非公开发布版本号）。公开发布自 v0.2.x 起。</p>
       <div class="milestones">
         <div class="ms">
-          <h4>M1 · 数据地基</h4>
+          <h4 data-i18n="ms1.title">M1 · 数据地基</h4>
           <ul class="news-list">
-            <li>SQLite 数据层替换 SharedPreferences，事务落盘 + 首启迁移</li>
-            <li>store 拆分与备份 JSON 格式层，导出/恢复往返校验</li>
+            <li data-i18n="ms1.1">SQLite 数据层替换 SharedPreferences，事务落盘 + 首启迁移</li>
+            <li data-i18n="ms1.2">store 拆分与备份 JSON 格式层，导出/恢复往返校验</li>
           </ul>
         </div>
         <div class="ms">
-          <h4>M2 · 工程安全</h4>
+          <h4 data-i18n="ms2.title">M2 · 工程安全</h4>
           <ul class="news-list">
-            <li>CI 闸门（analyze + test）</li>
-            <li>备份可选 AES-256-GCM 口令加密</li>
-            <li>依赖巡检与本地错误日志（最近 50 条）</li>
+            <li data-i18n="ms2.1">CI 闸门（analyze + test）</li>
+            <li data-i18n="ms2.2">备份可选 AES-256-GCM 口令加密</li>
+            <li data-i18n="ms2.3">依赖巡检与本地错误日志（最近 50 条）</li>
           </ul>
         </div>
         <div class="ms">
-          <h4>M3 · 体验增强</h4>
+          <h4 data-i18n="ms3.title">M3 · 体验增强</h4>
           <ul class="news-list">
-            <li>浅色 / 深色 / 跟随系统三档主题</li>
-            <li>首次启动 3 屏引导，可跳过</li>
+            <li data-i18n="ms3.1">浅色 / 深色 / 跟随系统三档主题</li>
+            <li data-i18n="ms3.2">首次启动 3 屏引导，可跳过</li>
           </ul>
         </div>
         <div class="ms">
-          <h4>M4 · 业务增值</h4>
+          <h4 data-i18n="ms4.title">M4 · 业务增值</h4>
           <ul class="news-list">
-            <li>拼配模板库（按总投入自动分配各批次重量）</li>
-            <li>毛利 / 定价助手（按目标毛利率反推建议售价）</li>
+            <li data-i18n="ms4.1">拼配模板库（按总投入自动分配各批次重量）</li>
+            <li data-i18n="ms4.2">毛利 / 定价助手（按目标毛利率反推建议售价）</li>
           </ul>
         </div>
       </div>
     </article>
 
-    <p class="news-note">记录基于公开发布说明与开发阶段里程碑整理；如某版本描述有误，欢迎到 <a href="feedback.html">反馈页</a> 告诉我们。</p>
+    <p class="news-note" data-i18n-html="cl.footnote">记录基于公开发布说明与开发阶段里程碑整理；如某版本描述有误，欢迎到 <a href="feedback.html">反馈页</a> 告诉我们。</p>
   </div>
 </main>
 
@@ -133,16 +153,18 @@
 <footer>
   <div class="container">
     <div class="links">
-      <a href="index.html">回到首页</a>
-      <a href="changelog.html">更新日志</a>
-      <a href="feedback.html">反馈</a>
-      <a href="https://github.com/wuyi-levard/bean-roaster-site" target="_blank" rel="noopener">源码仓库</a>
-      <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">下载 Release</a>
+      <a href="index.html" data-i18n="foot.home">回到首页</a>
+      <a href="changelog.html" data-i18n="foot.changelog">更新日志</a>
+      <a href="feedback.html" data-i18n="foot.feedback">反馈</a>
+      <a href="https://github.com/wuyi-levard/bean-roaster-site" target="_blank" rel="noopener" data-i18n="foot.repo">源码仓库</a>
+      <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener" data-i18n="foot.release">下载 Release</a>
     </div>
-    <div>© <span data-year>2026</span> 烘豆师 · 由咖啡烘焙从业者与开发者共同维护</div>
+    <div>© <span data-year>2026</span> <span data-i18n="foot.copy">烘豆师 · 保留所有权利</span></div>
+    <div class="foot-sub" data-i18n="foot.nodata">本 App 不收集任何用户数据</div>
   </div>
 </footer>
 
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
