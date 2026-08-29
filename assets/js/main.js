@@ -56,12 +56,56 @@
     year.forEach(function (n) { n.textContent = new Date().getFullYear(); });
   }
 
+  // ---------- 反馈表单 → 跳转预填 GitHub Issue ----------
+  function setupFeedbackForm() {
+    var form = document.querySelector('[data-feedback-form]');
+    if (!form) return;
+    var err = form.querySelector('[data-fb-err]');
+    var REPO = 'wuyi-levard/bean-roaster-site';
+
+    function showErr(msg) {
+      if (!err) return;
+      err.textContent = msg;
+      err.hidden = false;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (err) err.hidden = true;
+
+      var get = function (n) { return (form.querySelector('[name="' + n + '"]') || {}).value || ''; };
+      var type = get('type').trim();
+      var title = get('title').trim();
+      var desc = get('desc').trim();
+      var steps = get('steps').trim();
+      var contact = get('contact').trim();
+      var version = get('version').trim();
+
+      if (!title) { showErr('请填写标题。'); form.querySelector('[name="title"]').focus(); return; }
+      if (!desc) { showErr('请填写详细描述。'); form.querySelector('[name="desc"]').focus(); return; }
+
+      var body = '类型：' + type + '\n' +
+                 'App 版本：' + (version || '未填写') + '\n\n' +
+                 desc + '\n\n' +
+                 (steps ? '复现步骤：\n' + steps + '\n\n' : '') +
+                 (contact ? '联系方式：' + contact + '\n\n' : '') +
+                 '---\n由烘豆师产品介绍站反馈表单提交。';
+
+      var url = 'https://github.com/' + REPO + '/issues/new' +
+                '?title=' + encodeURIComponent('[' + type + '] ' + title) +
+                '&body=' + encodeURIComponent(body) +
+                '&labels=' + encodeURIComponent('feedback');
+
+      window.open(url, '_blank', 'noopener');
+    });
+  }
+
   // ---------- init ----------
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
-      setupCopy(); setupSmoothScroll(); setupVersion();
+      setupCopy(); setupSmoothScroll(); setupVersion(); setupFeedbackForm();
     });
   } else {
-    setupCopy(); setupSmoothScroll(); setupVersion();
+    setupCopy(); setupSmoothScroll(); setupVersion(); setupFeedbackForm();
   }
 })();
