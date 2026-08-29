@@ -504,8 +504,10 @@ section { padding: clamp(56px, 8vw, 96px) 0; }
 }
 .contact-card {
   display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 10px 18px;
   margin-top: 24px;
   padding: 10px 18px;
   background: var(--surface-2);
@@ -514,7 +516,19 @@ section { padding: clamp(56px, 8vw, 96px) 0; }
   color: var(--ink);
   border: 1px solid var(--line);
 }
+.contact-card .contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 .contact-card .wx { color: var(--brand-strong); font-weight: 600; }
+.contact-card .email {
+  color: var(--brand-strong);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--brand);
+}
+.contact-card .email:hover { color: var(--brand); }
 .contact-card .copy {
   cursor: pointer;
   background: var(--brand);
