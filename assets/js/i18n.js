@@ -29,7 +29,7 @@
       'foot.changelog': '更新日誌',
       'foot.feedback': '意見回饋',
       'foot.repo': '原始碼倉庫',
-      'foot.release': '下載 Release',
+      'foot.release': '下載 APK',
       'foot.copy': '烘豆師 · 保留所有權利',
       'foot.nodata': '本 App 不收集任何使用者資料',
       'foot.privacy': '隱私政策',
@@ -40,7 +40,7 @@
       'hero.brandsub': 'HongDouShi · 咖啡烘焙庫存',
       'hero.title': '咖啡烘焙，從這一本帳開始',
       'hero.lead': '面向咖啡烘焙從業者的本機生豆 / 烘焙豆庫存管理 App。業務資料只存本機，離線 OCR 自動辨識生豆袋標籤，袋·kg 雙計量與即期預警，烘焙轉化、配方成本與毛利定價一站完成。',
-      'hero.dl': '↓ 查看 Release 下載',
+      'hero.dl': '↓ 下載 APK（Android 直鏈）',
       'hero.note': 'Flutter 跨端建置 · Android 12+ / iOS 16+',
 
       /* 核心功能 */
@@ -131,7 +131,7 @@
       'sec.dl.eyebrow': '下載與聯繫',
       'sec.dl.title': '把烘豆師帶進你的工坊',
       'dl.meta': '目前版本 v<span data-version="0.2.10">0.2.10</span> · Android / iOS 雙平台',
-      'dl.btn': '↓ 前往 Release 頁面下載 APK',
+      'dl.btn': '↓ 下載 APK（Android 直鏈）',
       'dl.repo': '查看原始碼倉庫',
       'dl.wx': '微信：',
       'dl.email': '信箱：',
@@ -144,7 +144,7 @@
       'cl.desc': '烘豆師各版本更新記錄與能力演進',
       'cl.eyebrow': '更新日誌',
       'cl.h2': '烘豆師版本更新記錄',
-      'cl.lead': '以下為公開發布版本的能力演進。最新版本 APK 見 <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">Release 頁面</a>。',
+      'cl.lead': '以下為公開發布版本的能力演進。最新版本 APK 見 <a href="https://hongdoushi.levard.cn/download/HongDouShi-community-v0.2.10-214.apk" target="_blank" rel="noopener">伺服器直鏈</a>。',
       'cl.tag.new': '最新',
       'cl.tag.published': '公開發布',
       'cl.ocr.title': '🔍 離線 OCR 大幅增強',
@@ -268,7 +268,7 @@
       'foot.changelog': 'Changelog',
       'foot.feedback': 'Feedback',
       'foot.repo': 'Source Repo',
-      'foot.release': 'Download Release',
+      'foot.release': 'Download APK',
       'foot.copy': 'Bean Roaster · All rights reserved',
       'foot.nodata': 'This app collects no user data',
       'foot.privacy': 'Privacy Policy',
@@ -279,7 +279,7 @@
       'hero.brandsub': 'Bean Roaster · Coffee Roasting Inventory',
       'hero.title': 'Coffee Roasting, Starting with This Ledger',
       'hero.lead': 'A local green and roasted bean inventory app for coffee roasters. Business data never leaves your device; offline OCR reads green-bean bag labels; dual bag·kg units with expiry alerts; roast conversion, blend costing and margin pricing in one place.',
-      'hero.dl': '↓ Get it from Releases',
+      'hero.dl': '↓ Download APK (Android)',
       'hero.note': 'Cross-platform Flutter · Android 12+ / iOS 16+',
 
       /* Features */
@@ -370,7 +370,7 @@
       'sec.dl.eyebrow': 'Download & Contact',
       'sec.dl.title': 'Bring Bean Roaster to Your Roastery',
       'dl.meta': 'Current version v<span data-version="0.2.10">0.2.10</span> · Android / iOS',
-      'dl.btn': '↓ Download APK from Releases',
+      'dl.btn': '↓ Download APK (Android)',
       'dl.repo': 'View Source Repository',
       'dl.wx': 'WeChat: ',
       'dl.email': 'Email: ',
@@ -383,7 +383,7 @@
       'cl.desc': 'Release history and capability evolution of Bean Roaster',
       'cl.eyebrow': 'Changelog',
       'cl.h2': 'Bean Roaster Release History',
-      'cl.lead': 'Capability evolution across public releases. The latest APK is on the <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">Releases page</a>.',
+      'cl.lead': 'Capability evolution across public releases. The latest APK is on the <a href="https://hongdoushi.levard.cn/download/HongDouShi-community-v0.2.10-214.apk" target="_blank" rel="noopener">direct server link</a>.',
       'cl.tag.new': 'Latest',
       'cl.tag.published': 'Public Release',
       'cl.ocr.title': '🔍 Major Offline OCR Improvements',
@@ -496,6 +496,7 @@
     if (!(kind in el._hdsSnap)) {
       if (kind === 'text') el._hdsSnap[kind] = el.textContent;
       else if (kind === 'html') el._hdsSnap[kind] = el.innerHTML;
+      else if (kind === 'title') el._hdsSnap[kind] = el.textContent;
       else el._hdsSnap[kind] = el.getAttribute(kind);
     }
     return el._hdsSnap[kind];
