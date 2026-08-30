@@ -235,6 +235,7 @@
       'pv.s5b': '一鍵匯出全部資料為 JSON；可選口令加密採用 <code>AES-256-GCM</code>（PBKDF2-HMAC-SHA256，20 萬次迭代）。口令僅你本人持有——忘記口令無法由我們找回，這是有意的設計。',
       'pv.s6t': '專業版授權',
       'pv.s6b': '社群版授權透過離線、綁定裝置的授權碼完成，全程無需聯網。商店版的能力解鎖由商店流程驗證。無論哪種管道，授權校驗都不上傳你的庫存或訂單等業務資料。',
+      'pv.s6c': '商店版的購買與支付完全由 Apple / Google 處理：我們不收集、不儲存任何支付資訊（如卡號、帳單地址），也無法取得這些資料。退款、取消與爭議請透過相應商店的流程辦理。',
       'pv.s7t': '日誌與診斷',
       'pv.s7b': 'App 僅在本機保留最近 50 條錯誤日誌，用於你自行排查，可手動匯出。這些日誌保存在本機，預設不會發送給我們；如需技術支援，由你主動提供。',
       'pv.s8t': '本網站（介紹站）',
@@ -246,7 +247,7 @@
       'pv.s11t': '政策變更',
       'pv.s11b': '本政策可能隨版本更新。重大變更會在更新日誌中說明，新版本發布即視為生效。本頁頂部標註最後更新日期。',
       'pv.s12t': '聯絡我們',
-      'pv.s12b': '關於隱私的任何疑問，可透過信箱 <a class="inline" href="mailto:operations@levard.cn">operations@levard.cn</a> 或微信 <code>levdard2012</code> 聯絡。郵件 / 微信溝通內容由對應平台隱私政策約束。'
+      'pv.s12b': '關於隱私的任何疑問，可透過信箱 <a class="inline" href="mailto:operations@levard.cn">operations@levard.cn</a> 或微信 <code>levard2012</code> 聯絡。郵件 / 微信溝通內容由對應平台隱私政策約束。'
     },
 
     /* ================= English ================= */
@@ -473,6 +474,7 @@
       'pv.s5b': 'One tap exports all data to JSON. Optional passphrase encryption uses <code>AES-256-GCM</code> (PBKDF2-HMAC-SHA256, 200k iterations). The passphrase is yours alone—if you forget it we cannot recover it. That is intentional by design.',
       'pv.s6t': 'Pro entitlements',
       'pv.s6b': 'Community entitlements use an offline, device-bound license code and need no network. Store builds unlock features through the store\'s verification flow. On every channel, entitlement checks never upload your inventory or orders.',
+      'pv.s6c': 'Purchases in the store editions are processed entirely by Apple / Google. We never collect or store any payment information (such as card numbers or billing addresses) and have no access to it. Refunds and disputes are handled through the respective store\'s process.',
       'pv.s7t': 'Logs & diagnostics',
       'pv.s7b': 'The app keeps only the last 50 error logs locally for your own troubleshooting and can export them manually. These logs stay on device and are not sent to us by default; you share them proactively if you need support.',
       'pv.s8t': 'This website',
@@ -484,7 +486,7 @@
       'pv.s11t': 'Changes',
       'pv.s11b': 'This policy may change with releases. Material changes are noted in the changelog and take effect when a new version ships. The last-updated date is shown at the top of this page.',
       'pv.s12t': 'Contact',
-      'pv.s12b': 'For any privacy questions, contact us at <a class="inline" href="mailto:operations@levard.cn">operations@levard.cn</a> or WeChat <code>levdard2012</code>. Email and WeChat communications are governed by the respective platform privacy policies.'
+      'pv.s12b': 'For any privacy questions, contact us at <a class="inline" href="mailto:operations@levard.cn">operations@levard.cn</a> or WeChat <code>levard2012</code>. Email and WeChat communications are governed by the respective platform privacy policies.'
     }
   };
 
