@@ -20,6 +20,7 @@
       'nav.changelog': '更新日誌',
       'nav.platform': '平台',
       'nav.feedback': '意見回饋',
+      'nav.privacyPolicy': '隱私政策',
       'ctl.theme.auto': '主題：跟隨系統',
       'ctl.theme.light': '主題：淺色',
       'ctl.theme.dark': '主題：深色',
@@ -31,6 +32,7 @@
       'foot.release': '下載 Release',
       'foot.copy': '烘豆師 · 保留所有權利',
       'foot.nodata': '本 App 不收集任何使用者資料',
+      'foot.privacy': '隱私政策',
 
       /* 首頁 */
       'idx.title': '烘豆師 · 專為咖啡烘焙從業者打造的本機庫存管理 App',
@@ -79,6 +81,7 @@
       'p3.desc': '沒有第三方 SDK、沒有統計上報、沒有推送。錯誤日誌僅本機保留最近 50 條，可手動匯出。',
       'p4.title': '✓ 帳本可回放校驗',
       'p4.desc': '全庫存以不可變流水為真相源，匯出/還原時往返校驗帳實一致；恢復門禁拒絕一切旁路寫入。',
+      'sec.priv.more': '查看完整隱私政策 →',
 
       /* 平台 */
       'sec.plat.eyebrow': '跨端與平台',
@@ -211,7 +214,39 @@
       't404.desc': '這杯咖啡好像灑了 —— 你造訪的頁面不存在。',
       't404.home': '回到首頁',
       't404.changelog': '更新日誌',
-      't404.feedback': '意見回饋'
+      't404.feedback': '意見回饋',
+
+      /* 隱私政策頁 */
+      'pv.title': '隱私政策 · 烘豆師',
+      'pv.desc': '烘豆師（HongDouShi）隱私政策：本機優先的咖啡烘焙庫存 App，不向開發者或第三方上傳業務資料。',
+      'pv.eyebrow': '隱私政策',
+      'pv.h1': '隱私政策',
+      'pv.updated': '生效日期 / 最後更新：2026 年 8 月 30 日',
+      'pv.intro': '烘豆師（HongDouShi）是一款面向咖啡烘焙從業者的本機優先庫存管理 App。本政策說明我們如何處理與 App 及本網站相關的資料。簡短結論：我們不營運任何伺服器，也不向開發者或第三方上傳你的業務資料。',
+      'pv.s1t': '我們收集哪些資料',
+      'pv.s1b': 'App 不會收集、上傳或共享任何個人資訊或業務資料到外部伺服器。庫存、訂單、客戶、資金流水、配方與設定全部只保存在你自己的裝置上。我們（開發者）無法看到、也無法取回這些資料。',
+      'pv.s2t': '資料存放在哪裡',
+      'pv.s2b': '所有業務資料以本機 SQLite 資料庫形式存放在 App 沙盒目錄內；手動備份匯出為 JSON 檔案，保存在應用程式文件目錄。換機時透過匯入備份還原，資料不經由任何中間服務。',
+      'pv.s3t': '網路與權限',
+      'pv.s3b': 'Android 社群管道建置不使用 <code>INTERNET</code> 權限——在系統層面即停用資料上傳。App 不含任何第三方統計、遙測或廣告 SDK。對於透過應用程式商店發行的版本，所需的授權驗證僅在你與商店之間完成，不向開發者伺服器傳輸業務資料。',
+      'pv.s4t': '離線 OCR 與圖片',
+      'pv.s4b': '生豆袋標籤辨識使用裝置端 PaddleOCR 推論，圖片始終留在本機，絕不上傳。相機原圖作為溯源與人工覆核來源保留在本機；辨識增強副本僅在當前階段快取，階段結束即清理，不進入備份、匯出或學習樣本。',
+      'pv.s5t': '備份與加密',
+      'pv.s5b': '一鍵匯出全部資料為 JSON；可選口令加密採用 <code>AES-256-GCM</code>（PBKDF2-HMAC-SHA256，20 萬次迭代）。口令僅你本人持有——忘記口令無法由我們找回，這是有意的設計。',
+      'pv.s6t': '專業版授權',
+      'pv.s6b': '社群版授權透過離線、綁定裝置的授權碼完成，全程無需聯網。商店版的能力解鎖由商店流程驗證。無論哪種管道，授權校驗都不上傳你的庫存或訂單等業務資料。',
+      'pv.s7t': '日誌與診斷',
+      'pv.s7b': 'App 僅在本機保留最近 50 條錯誤日誌，用於你自行排查，可手動匯出。這些日誌保存在本機，預設不會發送給我們；如需技術支援，由你主動提供。',
+      'pv.s8t': '本網站（介紹站）',
+      'pv.s8b': '你正在瀏覽的網站是純靜態頁面，沒有後端、不做統計、不投放廣告。它僅使用瀏覽器本機儲存（localStorage）記住你的主題與語言偏好，這些資訊不與任何帳號綁定、也不外傳。回饋表單會將內容預填到 <a class="inline" href="https://github.com/wuyi-levard/bean-roaster-site/issues" target="_blank" rel="noopener">GitHub Issues</a> 並新開分頁，由你登入 GitHub 後確認提交；該過程不經由我們的伺服器。GitHub 側的資料受其隱私政策約束。',
+      'pv.s9t': '你的權利與控制',
+      'pv.s9b': '你隨時可以：在 App 內匯出全部資料；透過「設定 → 備份與還原」本機覆蓋還原；解除安裝 App 或清除應用程式資料以徹底刪除本機資料。由於資料從不離開你的裝置，我們無力也無法代為刪除或取回。',
+      'pv.s10t': '兒童隱私',
+      'pv.s10b': '本產品面向烘焙從業者，不針對兒童設計，也不會有意收集任何年齡使用者的個人資訊（事實上我們不收集任何資料）。',
+      'pv.s11t': '政策變更',
+      'pv.s11b': '本政策可能隨版本更新。重大變更會在更新日誌中說明，新版本發布即視為生效。本頁頂部標註最後更新日期。',
+      'pv.s12t': '聯絡我們',
+      'pv.s12b': '關於隱私的任何疑問，可透過信箱 <a class="inline" href="mailto:operations@levard.cn">operations@levard.cn</a> 或微信 <code>levdard2012</code> 聯絡。郵件 / 微信溝通內容由對應平台隱私政策約束。'
     },
 
     /* ================= English ================= */
@@ -223,6 +258,7 @@
       'nav.changelog': 'Changelog',
       'nav.platform': 'Platform',
       'nav.feedback': 'Feedback',
+      'nav.privacyPolicy': 'Privacy',
       'ctl.theme.auto': 'Theme: follow system',
       'ctl.theme.light': 'Theme: light',
       'ctl.theme.dark': 'Theme: dark',
@@ -234,6 +270,7 @@
       'foot.release': 'Download Release',
       'foot.copy': 'Bean Roaster · All rights reserved',
       'foot.nodata': 'This app collects no user data',
+      'foot.privacy': 'Privacy Policy',
 
       /* Home */
       'idx.title': 'Bean Roaster · Local Inventory App for Coffee Roasters',
@@ -282,6 +319,7 @@
       'p3.desc': 'No third-party SDKs, no analytics, no push. The error log keeps the last 50 entries locally and exports manually.',
       'p4.title': '✓ Replay-verifiable ledger',
       'p4.desc': 'Inventory is sourced from immutable transactions; export and restore round-trips verify consistency, and recovery lockdown rejects all bypass writes.',
+      'sec.priv.more': 'View full Privacy Policy →',
 
       /* Platform */
       'sec.plat.eyebrow': 'Cross-Platform',
@@ -414,7 +452,39 @@
       't404.desc': 'Looks like this coffee spilled — the page you visited does not exist.',
       't404.home': 'Back to Home',
       't404.changelog': 'Changelog',
-      't404.feedback': 'Feedback'
+      't404.feedback': 'Feedback',
+
+      /* Privacy policy page */
+      'pv.title': 'Privacy Policy · HongDouShi',
+      'pv.desc': 'HongDouShi (Bean Roaster) privacy policy: a local-first coffee roasting inventory app that never uploads your business data to us or any third party.',
+      'pv.eyebrow': 'Privacy Policy',
+      'pv.h1': 'Privacy Policy',
+      'pv.updated': 'Effective / last updated: August 30, 2026',
+      'pv.intro': 'HongDouShi (Bean Roaster) is a local-first inventory app for coffee roasters. This policy explains how we handle data related to the app and this website. The short version: we run no servers and never upload your business data to ourselves or any third party.',
+      'pv.s1t': 'What we collect',
+      'pv.s1b': 'The app does not collect, upload, or share any personal information or business data to any external server. Inventory, orders, customers, fund ledger, recipes, and settings live only on your own device. We (the developer) cannot see or retrieve that data.',
+      'pv.s2t': 'Where data lives',
+      'pv.s2b': 'All business data is stored as a local SQLite database inside the app\'s sandbox directory. Manual backups export to a JSON file in the app documents directory. Moving to a new device is done by importing a backup—no intermediary service is involved.',
+      'pv.s3t': 'Network & permissions',
+      'pv.s3b': 'The Android community build declares no <code>INTERNET</code> permission—data upload is disabled at the OS level. The app ships no third-party analytics, telemetry, or ad SDKs. For store-distributed builds, any required license verification happens only between you and the store; no business data is transmitted to our servers.',
+      'pv.s4t': 'Offline OCR & images',
+      'pv.s4b': 'Green-bean label recognition runs on-device with PaddleOCR; images always stay on the device and are never uploaded. Camera originals are kept locally as the source for tracing and human review; recognition-enhancement copies live only in the current session cache and are cleared when the session ends—they never enter backups, exports, or training samples.',
+      'pv.s5t': 'Backups & encryption',
+      'pv.s5b': 'One tap exports all data to JSON. Optional passphrase encryption uses <code>AES-256-GCM</code> (PBKDF2-HMAC-SHA256, 200k iterations). The passphrase is yours alone—if you forget it we cannot recover it. That is intentional by design.',
+      'pv.s6t': 'Pro entitlements',
+      'pv.s6b': 'Community entitlements use an offline, device-bound license code and need no network. Store builds unlock features through the store\'s verification flow. On every channel, entitlement checks never upload your inventory or orders.',
+      'pv.s7t': 'Logs & diagnostics',
+      'pv.s7b': 'The app keeps only the last 50 error logs locally for your own troubleshooting and can export them manually. These logs stay on device and are not sent to us by default; you share them proactively if you need support.',
+      'pv.s8t': 'This website',
+      'pv.s8b': 'The site you are reading is a static page with no backend, no analytics, and no ads. It uses only browser local storage (localStorage) to remember your theme and language preferences—this is not tied to any account and is never shared. The feedback form pre-fills a <a class="inline" href="https://github.com/wuyi-levard/bean-roaster-site/issues" target="_blank" rel="noopener">GitHub Issue</a> in a new tab; you sign in to GitHub and confirm the submission yourself. That flow never touches our servers. Data on GitHub\'s side is governed by its own privacy policy.',
+      'pv.s9t': 'Your rights & control',
+      'pv.s9b': 'At any time you can: export all data from within the app; perform a local overwrite-restore via Settings → Backup & Restore; or uninstall the app / clear app data to delete everything on device. Because data never leaves your device, we cannot delete or retrieve it on your behalf.',
+      'pv.s10t': 'Children',
+      'pv.s10b': 'This product targets roasting professionals, is not designed for children, and does not knowingly collect personal information from users of any age (in fact we collect no data at all).',
+      'pv.s11t': 'Changes',
+      'pv.s11b': 'This policy may change with releases. Material changes are noted in the changelog and take effect when a new version ships. The last-updated date is shown at the top of this page.',
+      'pv.s12t': 'Contact',
+      'pv.s12b': 'For any privacy questions, contact us at <a class="inline" href="mailto:operations@levard.cn">operations@levard.cn</a> or WeChat <code>levdard2012</code>. Email and WeChat communications are governed by the respective platform privacy policies.'
     }
   };
 

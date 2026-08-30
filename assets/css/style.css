@@ -745,3 +745,45 @@ footer a:hover { color: var(--brand); }
 @media (max-width: 560px) {
   .field-row { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* ============== 隐私政策页 ============== */
+.policy-doc { max-width: 840px; margin: 0 auto; }
+.policy-doc .updated { margin: -8px 0 28px; }
+.policy-doc .intro { font-size: 1.05rem; line-height: 1.9; color: var(--ink); margin: 0 0 8px; }
+.policy-toc {
+  list-style: none;
+  margin: 28px 0 12px;
+  padding: 16px 20px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+.policy-toc li { font-size: .92rem; }
+.policy-toc a { color: var(--brand-strong); text-decoration: none; }
+.policy-toc a:hover { text-decoration: underline; }
+.policy-doc h2 {
+  font-size: 1.22rem;
+  margin: 34px 0 10px;
+  color: var(--brand-strong);
+  scroll-margin-top: 84px;
+}
+.policy-doc h2 .num {
+  display: inline-block;
+  min-width: 1.8em;
+  color: var(--brand);
+}
+.policy-doc p { line-height: 1.9; color: var(--ink); margin: 0 0 18px; }
+.policy-doc p code {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: .9em;
+  color: var(--brand-strong);
+}
+.policy-doc a.inline { color: var(--brand-strong); text-decoration: none; border-bottom: 1px dashed var(--brand); }
+.policy-doc a.inline:hover { color: var(--brand); }
+.policy-back { margin-top: 40px; }
