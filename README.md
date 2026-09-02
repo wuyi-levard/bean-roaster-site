@@ -24,7 +24,7 @@ site/
 
 将 `site/` 静态文件部署到 Nginx 或同等 Web 服务，启用 HTTPS。访问日志仅用于安全、防攻击和故障排查，按 `docs/privacy/tencent-cloud-log-rotation.md` 使用 `logrotate` 配置 7 天轮转删除，并保留配置与巡检证据。
 
-备案期间域名可能先进入 DNSPod/腾讯云拦截页，请求不会到达源站，因此暂时没有源站访问日志是正常现象；备案完成并解除拦截后，再按日志轮转文档完成配置和巡检。
+正式域名按已完成备案的站点提供服务。访问日志仅用于安全、防攻击和故障排查，按 `../docs/privacy/tencent-cloud-log-rotation.md` 配置 7 天轮转删除，并保留部署与巡检记录。
 
 ## GitHub Pages 预览
 
