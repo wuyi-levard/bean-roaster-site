@@ -1,6 +1,6 @@
 # 烘豆师 · 产品介绍站
 
-这是「烘豆师」App 的官方产品介绍站，**纯静态、无构建工具链**，部署到 GitHub Pages。
+这是「烘豆师」App 的官方产品介绍站，**纯静态、无构建工具链**。正式站点由腾讯云轻量应用服务器托管，源码仍可通过 GitHub 仓库协作。
 
 ## 站点结构
 
@@ -13,14 +13,22 @@ site/
 ├── .github/workflows/pages.yml   # 部署到 Pages 的 Actions
 └── assets/
     ├── css/style.css       # 视觉令牌 + 排版
-    ├── js/main.js          # 复制微信号 / 平滑滚动兜底
+    ├── js/main.js          # 主题、语言、复制与反馈表单交互
     └── img/
         ├── logo.svg        # 咖啡豆图标
         ├── favicon.svg
         └── screenshots/    # 4 张真实模拟器截图
 ```
 
-## 部署到 GitHub Pages
+## 部署到腾讯云轻量应用服务器
+
+将 `site/` 静态文件部署到 Nginx 或同等 Web 服务，启用 HTTPS。访问日志仅用于安全、防攻击和故障排查，按 `docs/privacy/tencent-cloud-log-rotation.md` 使用 `logrotate` 配置 7 天轮转删除，并保留配置与巡检证据。
+
+备案期间域名可能先进入 DNSPod/腾讯云拦截页，请求不会到达源站，因此暂时没有源站访问日志是正常现象；备案完成并解除拦截后，再按日志轮转文档完成配置和巡检。
+
+## GitHub Pages 预览
+
+如需公开预览，可继续使用下方 GitHub Actions 流程；预览地址不改变正式站点的腾讯云托管事实。
 
 ### 一次性操作
 
@@ -57,10 +65,6 @@ git push
 ### 修改下载链接
 - 下载入口已指向公开站仓 `https://github.com/wuyi-levard/bean-roaster-site/releases`
 - 当前 APK 不在仓内（258MB 超 GitHub 单文件限制），通过手动 `gh release create` 上传到该公开仓即可启用下载
-
-### 修改微信号
-- `index.html`：搜索 `levard2012`，与 `data-copy` 属性保持一致
-- `assets/js/main.js` 无需改
 
 ### 主题色
 - 编辑 `assets/css/style.css` 顶部 `:root` 的 CSS 变量

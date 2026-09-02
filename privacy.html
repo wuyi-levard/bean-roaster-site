@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n-title="pv.title">隐私政策 · 烘豆师</title>
-  <meta name="description" content="烘豆师 HongDouShi 隐私政策：本地优先的咖啡烘焙库存 App，不向开发者或第三方上传业务数据；本网站为纯静态页面，无后端、无统计。" data-i18n-content="pv.desc">
+  <meta name="description" content="烘豆师 HongDouShi 隐私政策：个人信息处理者为林云，说明本地业务数据、权限、平台服务、官网日志与用户权利。" data-i18n-content="pv.desc">
   <meta name="theme-color" content="#B5793E">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <meta property="og:title" content="隐私政策 · 烘豆师" data-i18n-content="pv.title">
@@ -62,8 +62,8 @@
         <span class="eyebrow" data-i18n="pv.eyebrow">隐私政策</span>
         <h1 data-i18n="pv.h1" style="font-size:2rem;margin:.4rem 0 0;">隐私政策</h1>
       </div>
-      <p class="text-muted updated" data-i18n="pv.updated">生效日期 / 最后更新：2026 年 8 月 30 日</p>
-      <p class="intro" data-i18n-html="pv.intro">烘豆师（HongDouShi）是一款面向咖啡烘焙从业者的本地优先库存管理 App。本政策说明我们如何处理与 App 及本网站相关的数据。简短结论：我们不运营任何服务器，也不向开发者或第三方上传你的业务数据。</p>
+      <p class="text-muted updated" data-i18n="pv.updated">政策版本：2026-09-02.v1 · 生效日期：2026 年 9 月 2 日 · 个人信息处理者：林云</p>
+      <p class="intro" data-i18n-html="pv.intro">烘豆师（HongDouShi）是一款面向咖啡烘焙从业者的本地优先库存管理 App。本政策说明我们如何处理与 App 及官网相关的数据、权限和平台服务。App 默认不将业务数据上传到开发者服务器；官网由腾讯云轻量应用服务器托管并仅处理必要访问日志。</p>
 
       <ul class="policy-toc">
         <li><a href="#s1" data-i18n="pv.s1t">我们收集哪些数据</a></li>
@@ -81,13 +81,13 @@
       </ul>
 
       <h2 id="s1"><span class="num">1</span><span data-i18n="pv.s1t">我们收集哪些数据</span></h2>
-      <p data-i18n-html="pv.s1b">App 不会收集、上传或共享任何个人信息或业务数据到外部服务器。库存、订单、客户、资金流水、配方与设置全部只保存在你自己的设备上。我们（开发者）无法看到、也无法取回这些数据。</p>
+      <p data-i18n-html="pv.s1b">App 会在你的设备本地处理并保存你主动录入或导入的客户、供应商、订单、库存、资金流水、配方、排产、设置、错误日志、OCR 原图及本地缓存，用于库存管理、订单履约、账务记录、标签识别、排障和备份恢复。默认不上传到开发者服务器。</p>
 
       <h2 id="s2"><span class="num">2</span><span data-i18n="pv.s2t">数据存放在哪里</span></h2>
-      <p data-i18n-html="pv.s2b">所有业务数据以本地 SQLite 数据库形式存放在 App 沙盒目录内；手动备份导出为 JSON 文件，保存在应用文档目录。换机时通过导入备份恢复，数据不经由任何中间服务。</p>
+      <p data-i18n-html="pv.s2b">业务数据默认保存在 App 私有目录。自动备份可写入你通过系统文件选择器授权的共享目录；共享目录中的备份文件不会因卸载 App 被应用删除，重装后需要重新授权目录。备份可使用口令加密；用户自行保存的共享目录文件由用户自行删除。</p>
 
       <h2 id="s3"><span class="num">3</span><span data-i18n="pv.s3t">网络与权限</span></h2>
-      <p data-i18n-html="pv.s3b">Android 社群渠道构建不使用 <code>INTERNET</code> 权限——在系统层面即禁用数据上传。App 不含任何第三方统计、遥测或广告 SDK。对于通过应用商店分发的版本，所需的授权验证仅在你与商店之间完成，不向开发者服务器传输业务数据。</p>
+      <p data-i18n-html="pv.s3b">相机仅在你点击扫码或拍照识别时申请，用于扫描 SKU 二维码或拍摄生豆袋标签，OCR 在设备端完成；拒绝后可手工输入、搜索或从系统图片选择器导入。日历读写仅在你点击同步排产提醒时申请；拒绝后仍可使用排产、订单和库存。通知仅在你主动开启库存预警时申请；拒绝后仍显示 App 内横幅。系统文件选择器只读取你明确选择的图片、文件或共享目录。</p>
 
       <h2 id="s4"><span class="num">4</span><span data-i18n="pv.s4t">离线 OCR 与图片</span></h2>
       <p data-i18n-html="pv.s4b">生豆袋标签识别使用设备端 PaddleOCR 推理，图片始终留在本机，绝不上传。相机原图作为溯源与人工复核来源保留在本地；识别增强副本仅在当前会话缓存，会话结束即清理，不进入备份、导出或学习样本。</p>
@@ -96,26 +96,26 @@
       <p data-i18n-html="pv.s5b">一键导出全部数据为 JSON；可选口令加密采用 <code>AES-256-GCM</code>（PBKDF2-HMAC-SHA256，20 万次迭代）。口令仅你本人持有——忘记口令无法由我们找回，这是有意的设计。</p>
 
       <h2 id="s6"><span class="num">6</span><span data-i18n="pv.s6t">专业版授权</span></h2>
-      <p data-i18n-html="pv.s6b">社群版授权通过离线、绑定设备的授权码完成，全程无需联网。商店版的能力解锁由商店流程验证。无论哪种渠道，授权校验都不上传你的库存或订单等业务数据。</p>
-      <p data-i18n-html="pv.s6c">商店版的购买与支付完全由 Apple / Google 处理：我们不收集、不存储任何支付信息（如卡号、账单地址），也无法获取这些数据。退款、取消与争议请通过相应商店的流程办理。</p>
+      <p data-i18n-html="pv.s6b">sqflite/SQLite、provider、fl_chart、file_picker、pdf、image、PaddleOCR/ONNX/OpenCV 仅用于本地数据库、界面、图表、文件、文档、图片和端侧 OCR，不上传 App 业务数据。in_app_purchase（Apple StoreKit / Google Play Billing）仅用于商店购买、恢复交易和判定专业版权益；平台会按自身规则处理交易所需信息，开发者不接收库存、订单或客户业务数据。flutter_local_notifications 仅创建本地库存预警通知；产品不接入统计、广告、崩溃上报、社交登录或云同步 SDK。</p>
+      <p data-i18n-html="pv.s6c">社区人工授权台账处理购买者名称、店名或昵称、设备申请码和授权码，仅用于授权验证、设备绑定、售后和防滥用。授权有效期内保存；授权失效后保留 2 年，期满删除。台账与 App 本地业务数据库分离，不进入 App 备份，不用于营销或画像。商店版购买与支付由 Apple / Google 处理，我们不收集或存储卡号、账单地址等支付信息。</p>
 
       <h2 id="s7"><span class="num">7</span><span data-i18n="pv.s7t">日志与诊断</span></h2>
-      <p data-i18n-html="pv.s7b">App 仅在本地保留最近 50 条错误日志，用于你自行排查，可手动导出。这些日志保存在本机，默认不会发送给我们；如需技术支持，由你主动提供。</p>
+      <p data-i18n-html="pv.s7b">App 仅在本地保留最近 50 条错误日志，用于你自行排查，可手动导出；默认不会发送给我们。官网由腾讯云轻量应用服务器托管；正式站点启用后，Web 服务可能记录 IP、请求时间、请求路径、响应状态和 User-Agent 等必要访问日志，仅用于安全、防攻击和故障排查，部署完成日志轮转配置后按 7 天保留并自动删除。备案拦截期间请求不会到达源站，源站没有对应访问日志属于正常现象。</p>
 
       <h2 id="s8"><span class="num">8</span><span data-i18n="pv.s8t">本网站（介绍站）</span></h2>
-      <p data-i18n-html="pv.s8b">你正在浏览的网站是纯静态页面，没有后端、不做统计、不投放广告。它仅使用浏览器本地存储（localStorage）记住你的主题与语言偏好，这些信息不与任何账号绑定、也不外传。反馈表单会将内容预填到 <a class="inline" href="https://github.com/wuyi-levard/bean-roaster-site/issues" target="_blank" rel="noopener">GitHub Issues</a> 并新开标签页，由你登录 GitHub 后确认提交；该过程不经由我们的服务器。GitHub 侧的数据受其隐私政策约束。</p>
+      <p data-i18n-html="pv.s8b">官网由腾讯云轻量应用服务器托管，不接入统计、广告、跨站追踪或用户画像。页面仅使用浏览器本地存储（localStorage）记住主题与语言偏好。反馈表单会将内容预填到 <a class="inline" href="https://github.com/wuyi-levard/bean-roaster-site/issues" target="_blank" rel="noopener">GitHub Issues</a> 并新开标签页，由你登录 GitHub 后确认提交；公开反馈请勿填写客户联系方式、授权码或备份内容，GitHub 侧的数据受其隐私政策约束。</p>
 
       <h2 id="s9"><span class="num">9</span><span data-i18n="pv.s9t">你的权利与控制</span></h2>
-      <p data-i18n-html="pv.s9b">你随时可以：在 App 内导出全部数据；通过「设置 → 备份与恢复」本地覆盖恢复；卸载 App 或清除应用数据以彻底删除本机数据。由于数据从不离开你的设备，我们无力也无法代为删除或取回。</p>
+      <p data-i18n-html="pv.s9b">App 不提供账号注册、登录或账号注销。你可以在 App 内清空本机业务数据，或卸载 App 删除 App 私有数据；共享目录中的备份由你自行删除。你可以通过 operations@levard.cn 咨询、请求更正或删除社区授权台账；在资料齐全且无需额外核验的情况下，我们的服务目标是不超过 15 个工作日完成或给出处理结果。该时限是处理承诺，不表述为所有情形下的统一法定期限。</p>
 
       <h2 id="s10"><span class="num">10</span><span data-i18n="pv.s10t">儿童隐私</span></h2>
-      <p data-i18n-html="pv.s10b">本产品面向烘焙从业者，不针对儿童设计，也不会有意收集任何年龄用户的个人信息（事实上我们不收集任何数据）。</p>
+      <p data-i18n-html="pv.s10b">本产品面向咖啡烘焙从业者，不以未成年人为目标用户。我们不会在知情情况下通过 App 建立未成年人账号或画像；如监护人认为存在不当处理，可通过邮箱联系我们核验。</p>
 
       <h2 id="s11"><span class="num">11</span><span data-i18n="pv.s11t">政策变更</span></h2>
-      <p data-i18n-html="pv.s11b">本政策可能随版本更新。重大变更会在更新日志中说明，新版本发布即视为生效。本页顶部标注最后更新日期。</p>
+      <p data-i18n-html="pv.s11b">本政策可能随版本更新。政策版本或重大处理变化时，会在 App 内重新展示并要求重新同意；官网顶部标注当前版本和生效日期。GB/T 35273-2020 作为推荐性标准用于检查基线，不替代法律法规。</p>
 
       <h2 id="s12"><span class="num">12</span><span data-i18n="pv.s12t">联系我们</span></h2>
-      <p data-i18n-html="pv.s12b">关于隐私的任何疑问，可通过邮箱 <a class="inline" href="mailto:operations@levard.cn">operations@levard.cn</a> 或微信 <code>levard2012</code> 联系。邮件 / 微信沟通内容由对应平台隐私政策约束。</p>
+      <p data-i18n-html="pv.s12b">关于隐私的任何疑问、权利请求或社区授权台账处理，请通过邮箱 <a class="inline" href="mailto:operations@levard.cn">operations@levard.cn</a> 联系。邮件沟通内容按邮件服务商的隐私政策处理。</p>
 
       <div class="btn-row policy-back" style="justify-content:flex-start;">
         <a class="btn btn-ghost" href="index.html" data-i18n="foot.home">回到首页</a>
@@ -136,7 +136,7 @@
       <a href="https://hongdoushi.levard.cn/download/HongDouShi-community-v0.2.10-214.apk" rel="noopener" data-i18n="foot.release">下载 APK</a>
     </div>
     <div>© <span data-year>2026</span> <span data-i18n="foot.copy">烘豆师 · 保留所有权利</span></div>
-    <div class="foot-sub" data-i18n="foot.nodata">本 App 不收集任何用户数据</div>
+    <div class="foot-sub" data-i18n="foot.nodata">App 在本地处理业务数据，默认不上传到开发者服务器</div>
   </div>
 </footer>
 
