@@ -62,7 +62,7 @@
         <span class="eyebrow" data-i18n="pv.eyebrow">隐私政策</span>
         <h1 data-i18n="pv.h1" style="font-size:2rem;margin:.4rem 0 0;">隐私政策</h1>
       </div>
-      <p class="text-muted updated" data-i18n="pv.updated">政策版本：2026-09-02.v1 · 生效日期：2026 年 9 月 2 日 · 个人信息处理者：林云</p>
+      <p class="text-muted updated" data-i18n="pv.updated">政策版本：2026-09-03.v1 · 生效日期：2026 年 9 月 3 日 · 个人信息处理者：林云</p>
       <p class="intro" data-i18n-html="pv.intro">烘豆师（HongDouShi）是一款面向咖啡烘焙从业者的本地优先库存管理 App。本政策说明我们如何处理与 App 及官网相关的数据、权限和平台服务。App 默认不将业务数据上传到开发者服务器；官网由腾讯云轻量应用服务器托管并仅处理必要访问日志。</p>
 
       <ul class="policy-toc">
@@ -87,7 +87,7 @@
       <p data-i18n-html="pv.s2b">业务数据默认保存在 App 私有目录。自动备份可写入你通过系统文件选择器授权的共享目录；共享目录中的备份文件不会因卸载 App 被应用删除，重装后需要重新授权目录。备份可使用口令加密；用户自行保存的共享目录文件由用户自行删除。</p>
 
       <h2 id="s3"><span class="num">3</span><span data-i18n="pv.s3t">网络与权限</span></h2>
-      <p data-i18n-html="pv.s3b">相机仅在你点击扫码或拍照识别时申请，用于扫描 SKU 二维码或拍摄生豆袋标签，OCR 在设备端完成；拒绝后可手工输入、搜索或从系统图片选择器导入。排产提醒使用本地通知，不读取或写入系统日历；通知仅在你主动开启库存预警或排产提醒时申请，拒绝后仍显示 App 内横幅。系统文件选择器只读取你明确选择的图片、文件或共享目录。</p>
+      <p data-i18n-html="pv.s3b">相机仅在你点击扫码或拍照识别时申请，用于扫描 SKU 二维码或拍摄生豆袋标签，OCR 在设备端完成；拒绝后可手工输入、搜索或从系统图片选择器导入。排产提醒使用本地通知，不读取或写入系统日历；只有你主动开启库存预警或排产提醒时，才申请通知权限和 Android 精确闹钟权限，提醒包含提示音和震动。拒绝后仍显示 App 内横幅；精确闹钟被系统关闭时可在系统设置中重新开启。系统文件选择器只读取你明确选择的图片、文件或共享目录。</p>
 
       <h2 id="s4"><span class="num">4</span><span data-i18n="pv.s4t">离线 OCR 与图片</span></h2>
       <p data-i18n-html="pv.s4b">生豆袋标签识别使用设备端 PaddleOCR 推理，图片始终留在本机，绝不上传。相机原图作为溯源与人工复核来源保留在本地；识别增强副本仅在当前会话缓存，会话结束即清理，不进入备份、导出或学习样本。</p>
@@ -96,7 +96,7 @@
       <p data-i18n-html="pv.s5b">一键导出全部数据为 JSON；可选口令加密采用 <code>AES-256-GCM</code>（PBKDF2-HMAC-SHA256，20 万次迭代）。口令仅你本人持有——忘记口令无法由我们找回，这是有意的设计。</p>
 
       <h2 id="s6"><span class="num">6</span><span data-i18n="pv.s6t">专业版授权</span></h2>
-      <p data-i18n-html="pv.s6b">sqflite/SQLite、provider、fl_chart、file_picker、pdf、image、PaddleOCR/ONNX/OpenCV 仅用于本地数据库、界面、图表、文件、文档、图片和端侧 OCR，不上传 App 业务数据。in_app_purchase（Apple StoreKit / Google Play Billing）仅用于商店购买、恢复交易和判定专业版权益；平台会按自身规则处理交易所需信息，开发者不接收库存、订单或客户业务数据。flutter_local_notifications 仅创建本地库存预警通知；产品不接入统计、广告、崩溃上报、社交登录或云同步 SDK。</p>
+      <p data-i18n-html="pv.s6b">sqflite/SQLite、provider、fl_chart、file_picker、pdf、image、PaddleOCR/ONNX/OpenCV 仅用于本地数据库、界面、图表、文件、文档、图片和端侧 OCR，不上传 App 业务数据。in_app_purchase（Apple StoreKit / Google Play Billing）仅用于商店购买、恢复交易和判定专业版权益；平台会按自身规则处理交易所需信息，开发者不接收库存、订单或客户业务数据。flutter_local_notifications 仅创建本地库存预警和排产提醒；通知可包含提示音和震动，不读取或写入系统日历。产品不接入统计、广告、崩溃上报、社交登录或云同步 SDK。</p>
       <p data-i18n-html="pv.s6c">社区人工授权台账处理购买者名称、店名或昵称、设备申请码和授权码，仅用于授权验证、设备绑定、售后和防滥用。授权有效期内保存；授权失效后保留 2 年，期满删除。台账与 App 本地业务数据库分离，不进入 App 备份，不用于营销或画像。商店版购买与支付由 Apple / Google 处理，我们不收集或存储卡号、账单地址等支付信息。</p>
 
       <h2 id="s7"><span class="num">7</span><span data-i18n="pv.s7t">日志与诊断</span></h2>
