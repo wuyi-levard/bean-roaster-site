@@ -40,7 +40,8 @@
       'hero.brandsub': 'HongDouShi · 咖啡烘焙庫存',
       'hero.title': '咖啡烘焙，從這一本帳開始',
       'hero.lead': '面向咖啡烘焙從業者的本機生豆 / 烘焙豆庫存管理 App。業務資料只存本機，離線 OCR 自動辨識生豆袋標籤，袋·kg 雙計量與即期預警，烘焙轉化、配方成本與毛利定價一站完成。',
-      'hero.dl': '↓ 下載 APK',
+      'hero.dl.github': '↓ GitHub Releases 下載',
+      'hero.dl.baidu': '↓ 百度網盤下載',
       'hero.note': 'Flutter 跨端建置 · Android 12+ / iOS 16+',
 
       /* 核心功能 */
@@ -281,7 +282,8 @@
       'hero.brandsub': 'Bean Roaster · Coffee Roasting Inventory',
       'hero.title': 'Coffee Roasting, Starting with This Ledger',
       'hero.lead': 'A local green and roasted bean inventory app for coffee roasters. Business data never leaves your device; offline OCR reads green-bean bag labels; dual bag·kg units with expiry alerts; roast conversion, blend costing and margin pricing in one place.',
-      'hero.dl': '↓ Download APK',
+      'hero.dl.github': '↓ Download via GitHub Releases',
+      'hero.dl.baidu': '↓ Download via Baidu Netdisk',
       'hero.note': 'Cross-platform Flutter · Android 12+ / iOS 16+',
 
       /* Features */
