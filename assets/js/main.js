@@ -202,6 +202,85 @@
     });
   }
 
+  // ---------- 当前页高亮（nav-menu / footer 的页面级链接）----------
+  function here() {
+    return location.pathname.split('/').pop() || 'index.html';
+  }
+
+  function setupCurrentPage() {
+    var cur = here();
+    document.querySelectorAll('.nav-menu a, .nav-links a, footer .links a').forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      if (href.charAt(0) === '#') return;              // 纯锚点交给滚动高亮
+      if (href.split('/').pop() === cur) a.setAttribute('aria-current', 'page');
+    });
+  }
+
+  // ---------- 滚动高亮（首页区块锚点）----------
+  function setupNavSpy() {
+    if (!('IntersectionObserver' in window)) return;
+
+    var map = {};
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      var hash = href.indexOf('#');
+      if (hash < 0) return;
+      var frag = href.slice(hash + 1);
+      var file = href.slice(0, hash).split('/').pop();
+      if (file && file !== here()) return;             // 指向别的页面，跳过
+      if (!frag || !document.getElementById(frag)) return;
+      (map[frag] = map[frag] || []).push(a);
+    });
+
+    var ids = Object.keys(map);
+    if (!ids.length) return;
+
+    function setCurrent(id) {
+      ids.forEach(function (k) {
+        (map[k] || []).forEach(function (a) {
+          if (k === id) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }
+
+    /* 取视口中带（上下各裁掉 45%/50%）命中的区块作为当前区块 */
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) setCurrent(e.target.id);
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    ids.forEach(function (id) { io.observe(document.getElementById(id)); });
+
+    /* Hero（#top）进入视口时清空高亮 */
+    var top = document.getElementById('top');
+    if (top) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) setCurrent(null); });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 }).observe(top);
+    }
+  }
+
+  // ---------- 「更多」下拉：点击外部 / ESC / 选中项后关闭 ----------
+  function setupNavMore() {
+    var d = document.querySelector('.nav-more');
+    if (!d) return;
+    document.addEventListener('click', function (e) {
+      if (d.open && !d.contains(e.target)) d.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && d.open) {
+        d.open = false;
+        var s = d.querySelector('summary');
+        if (s) s.focus();
+      }
+    });
+    d.querySelectorAll('.nav-menu a').forEach(function (a) {
+      a.addEventListener('click', function () { d.open = false; });
+    });
+  }
+
   // ---------- init ----------
   function init() {
     setupLang();
@@ -210,6 +289,9 @@
     setupSmoothScroll();
     setupVersion();
     setupFeedbackForm();
+    setupCurrentPage();
+    setupNavSpy();
+    setupNavMore();
   }
 
   if (document.readyState === 'loading') {
