@@ -21,7 +21,7 @@
       } catch (e) { /* 隐私模式下 localStorage 不可用，忽略 */ }
     })();
   </script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20260905a">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260906a">
 </head>
 <body>
 
@@ -74,12 +74,79 @@
       <p data-i18n-html="cl.lead">以下为公开发布版本的能力演进。最新版本 APK 见 <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">GitHub Releases</a> 或 <a href="https://pan.baidu.com/s/17-IyWG9qE9T9fcUgi1DNUA?pwd=bnyg" target="_blank" rel="noopener">百度网盘</a>。</p>
     </div>
 
-    <!-- v0.2.10 -->
+    <!-- v0.2.12 -->
     <article class="cl-entry current">
+      <div class="cl-head">
+        <span class="ver">v0.2.12</span>
+        <span class="date" data-i18n="cl.v012.date">2026-09-06</span>
+        <span class="cl-tag" data-i18n="cl.tag.new">最新</span>
+      </div>
+      <div class="news-grid">
+        <div class="news-group">
+          <h3 data-i18n="cl.v012.inv.title"><span class="news-ico">📦</span> 库存与工作台</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v012.inv.1">修复键盘遮挡富内容弹窗，补齐库存流水三语与备注来源，重构窄屏投入布局</li>
+            <li data-i18n="cl.v012.inv.2">收敛默认筛选并合并售罄归档，修复生豆处理法快捷项按当前语言回填</li>
+          </ul>
+          <h3 class="news-sub" data-i18n="cl.v012.sales.title"><span class="news-ico">🚚</span> 销售履约</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v012.sales.1">完成现货销售发货拆分与库存分类</li>
+          </ul>
+        </div>
+        <div class="news-group">
+          <h3 data-i18n="cl.v012.order.title"><span class="news-ico">🔔</span> 订单与提醒</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v012.order.1">修复排产覆盖与动态权限申请、预售履约显示、排产执行与退款预填</li>
+            <li data-i18n="cl.v012.order.2">修正 CVA 波段并启用后台精确通知</li>
+          </ul>
+          <h3 class="news-sub" data-i18n="cl.v012.i18n.title"><span class="news-ico">🌐</span> 隐私与本地化</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v012.i18n.1">本地化权限用途说明，补齐三语展示与窄屏交互，优化首页英文统计卡布局</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- v0.2.11 -->
+    <article class="cl-entry">
+      <div class="cl-head">
+        <span class="ver">v0.2.11</span>
+        <span class="date" data-i18n="cl.v011.date">2026-09-05</span>
+        <span class="cl-tag cl-tag-soft" data-i18n="cl.tag.published">公开发布</span>
+      </div>
+      <div class="news-grid">
+        <div class="news-group">
+          <h3 data-i18n="cl.v011.cva.title"><span class="news-ico">☕</span> 杯测（CVA）</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v011.cva.1">落地真实 CVA 评分模型与总分规则，接入选项式杯测与统计持久化</li>
+            <li data-i18n="cl.v011.cva.2">重构杯测表为真实 CVA 评估，完成滑块杯测与描述笔记重构</li>
+          </ul>
+          <h3 class="news-sub" data-i18n="cl.v011.privacy.title"><span class="news-ico">🛡️</span> 隐私与权限</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v011.privacy.1">建立版本化政策事实源与同意状态，新增启动同意门禁与隐私/权限设置页</li>
+            <li data-i18n="cl.v011.privacy.2">通知权限改为按需申请，加固跨卸载备份与恢复</li>
+          </ul>
+        </div>
+        <div class="news-group">
+          <h3 data-i18n="cl.v011.order.title"><span class="news-ico">🧾</span> 订单与客户</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v011.order.1">补齐分次退货退款闭环，改善订单排序与响应式可用性</li>
+            <li data-i18n="cl.v011.order.2">修复预售排产投入映射与售后库存闭合</li>
+          </ul>
+          <h3 class="news-sub" data-i18n="cl.v011.i18n.title"><span class="news-ico">🌐</span> 全面本地化</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v011.i18n.1">补齐三语展示与历史数据兜底，修复窄屏交互与英文布局</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- v0.2.10 -->
+    <article class="cl-entry">
       <div class="cl-head">
         <span class="ver">v0.2.10</span>
         <span class="date">2026-08-28</span>
-        <span class="cl-tag" data-i18n="cl.tag.new">最新</span>
+        <span class="cl-tag cl-tag-soft" data-i18n="cl.tag.published">公开发布</span>
       </div>
       <div class="news-grid">
         <div class="news-group">
@@ -177,7 +244,7 @@
   </div>
 </footer>
 
-<script src="assets/js/i18n.js?v=20260905a"></script>
-<script src="assets/js/main.js?v=20260905a"></script>
+<script src="assets/js/i18n.js?v=20260906a"></script>
+<script src="assets/js/main.js?v=20260906a"></script>
 </body>
 </html>
