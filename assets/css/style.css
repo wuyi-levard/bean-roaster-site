@@ -21,11 +21,12 @@
 /* ============================ 1. 设计令牌 ============================ */
 :root {
   /* ---- 品牌色 ---- */
-  --brand:              #B5793E;
+  --brand:              #9A6030;
   --brand-strong:       #8C5A2B;   /* 文本/链接，对比度达标 */
-  --brand-deep:         #74491F;   /* hover */
-  --brand-soft:         #E8D4B5;   /* 图标底、徽标底 */
-  --accent:             #6F8F5A;   /* 安全/正向 */
+  --brand-deep:         #6E4521;   /* hover */
+  --brand-soft:         #F2E0C8;   /* 图标底、徽标底 */
+  --accent:             #6F8F5A;
+  --danger:            #B23B2E;   /* 安全/正向 */
 
   /* ---- 中性色 ---- */
   --bg:                 #FBF6EE;
@@ -34,19 +35,19 @@
   --surface-2:          #F3EAD9;
   --ink:                #2E211A;
   --ink-2:              #6B5B4F;
-  --ink-3:              #9C8B7E;
+  --ink-3:              #8C7A6C;
   --line:               rgba(46, 33, 26, 0.10);
   --line-2:             rgba(46, 33, 26, 0.18);
 
   /* ---- 交互令牌（品牌底之上的前景色 / 主按钮底色）----
-     浅色下 #B5793E 配白字仅 3.66:1，不达 AA；故按钮/徽标统一使用
+     浅色按钮以 --brand-strong(#8C5A2B, 5.8:1) 配白字达 AA；品牌种子色即 M3 seed #9A6030，故按钮/徽标统一使用
      --btn-brand-bg(--brand-strong, 5.8:1) + --on-brand。 */
   --on-brand:           #FFFFFF;
   --btn-brand-bg:       var(--brand-strong);
   --btn-brand-bg-hover: var(--brand-deep);
   --btn-brand-shadow:   0 4px 14px rgba(140, 90, 43, 0.28);
   --btn-brand-shadow-h: 0 8px 22px rgba(116, 73, 31, 0.32);
-  --focus-ring:         rgba(140, 90, 43, 0.42);
+  --focus-ring:         rgba(154, 96, 48, 0.45);
   --scrim:              rgba(251, 246, 238, 0.82);
 
   /* ---- 圆角 ---- */
@@ -102,28 +103,29 @@
    1) 用户显式选择深色
    2) 系统为深色且用户未显式指定浅色 */
 :root[data-theme="dark"] {
-  --brand:              #C98F54;
-  --brand-strong:       #E2A967;
-  --brand-deep:         #EFBE82;
-  --brand-soft:         #40301C;
-  --accent:             #92B478;
+  --brand:              #9A6030;
+  --brand-strong:       #F0D0AC;
+  --brand-deep:         #E2B98E;
+  --brand-soft:         #3A2818;
+  --accent:             #9EBB86;
+  --danger:            #E48377;
 
   --bg:                 #17110C;
-  --bg-alt:             #1F1810;
-  --surface:            #221A12;
-  --surface-2:          #2C2017;
-  --ink:                #F1E7D8;
-  --ink-2:              #BDB1A0;
-  --ink-3:              #94857A;
+  --bg-alt:             #221A12;
+  --surface:            #211811;
+  --surface-2:          #2A1F16;
+  --ink:                #F7F0E8;
+  --ink-2:              #D6C4B4;
+  --ink-3:              #B59F8D;
   --line:               rgba(241, 231, 216, 0.10);
   --line-2:             rgba(241, 231, 216, 0.20);
 
-  --on-brand:           #1B1209;
-  --btn-brand-bg:       #C98F54;
-  --btn-brand-bg-hover: #D9A268;
+  --on-brand:           #FFFFFF;
+  --btn-brand-bg:       #9A6030;
+  --btn-brand-bg-hover: #B07A47;
   --btn-brand-shadow:   0 4px 14px rgba(0, 0, 0, 0.45);
   --btn-brand-shadow-h: 0 8px 22px rgba(0, 0, 0, 0.55);
-  --focus-ring:         rgba(226, 169, 103, 0.55);
+  --focus-ring:         rgba(154, 96, 48, 0.55);
   --scrim:              rgba(23, 17, 12, 0.82);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.40);
@@ -132,28 +134,29 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --brand:              #C98F54;
-    --brand-strong:       #E2A967;
-    --brand-deep:         #EFBE82;
-    --brand-soft:         #40301C;
-    --accent:             #92B478;
+    --brand:              #9A6030;
+    --brand-strong:       #F0D0AC;
+    --brand-deep:         #E2B98E;
+    --brand-soft:         #3A2818;
+    --accent:             #9EBB86;
+    --danger:            #E48377;
 
     --bg:                 #17110C;
-    --bg-alt:             #1F1810;
-    --surface:            #221A12;
-    --surface-2:          #2C2017;
-    --ink:                #F1E7D8;
-    --ink-2:              #BDB1A0;
-    --ink-3:              #94857A;
+    --bg-alt:             #221A12;
+    --surface:            #211811;
+    --surface-2:          #2A1F16;
+    --ink:                #F7F0E8;
+    --ink-2:              #D6C4B4;
+    --ink-3:              #B59F8D;
     --line:               rgba(241, 231, 216, 0.10);
     --line-2:             rgba(241, 231, 216, 0.20);
 
-    --on-brand:           #1B1209;
-    --btn-brand-bg:       #C98F54;
-    --btn-brand-bg-hover: #D9A268;
+    --on-brand:           #FFFFFF;
+    --btn-brand-bg:       #9A6030;
+    --btn-brand-bg-hover: #B07A47;
     --btn-brand-shadow:   0 4px 14px rgba(0, 0, 0, 0.45);
     --btn-brand-shadow-h: 0 8px 22px rgba(0, 0, 0, 0.55);
-    --focus-ring:         rgba(226, 169, 103, 0.55);
+    --focus-ring:         rgba(154, 96, 48, 0.55);
     --scrim:              rgba(23, 17, 12, 0.82);
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.40);
@@ -534,7 +537,7 @@ h2[id] { scroll-margin-top: calc(var(--nav-h) + var(--s-4)); }
   position: relative;
   padding-block: clamp(56px, 9vw, 120px) clamp(48px, 7vw, 96px);
   background:
-    radial-gradient(ellipse 60% 50% at 20% 0%, rgba(181, 121, 62, 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 0%, rgba(154, 96, 48, 0.20), transparent 60%),
     radial-gradient(ellipse 50% 40% at 90% 30%, rgba(111, 143, 90, 0.12), transparent 60%);
   overflow: hidden;
 }
@@ -542,14 +545,14 @@ h2[id] { scroll-margin-top: calc(var(--nav-h) + var(--s-4)); }
    导致“系统浅色 + 手动深色”时渐变不生效） */
 :root[data-theme="dark"] .hero {
   background:
-    radial-gradient(ellipse 60% 50% at 20% 0%, rgba(201, 143, 84, 0.22), transparent 62%),
-    radial-gradient(ellipse 50% 40% at 90% 30%, rgba(146, 180, 120, 0.12), transparent 62%);
+    radial-gradient(ellipse 60% 50% at 20% 0%, rgba(154, 96, 48, 0.24), transparent 62%),
+    radial-gradient(ellipse 50% 40% at 90% 30%, rgba(158, 187, 134, 0.12), transparent 62%);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .hero {
     background:
-      radial-gradient(ellipse 60% 50% at 20% 0%, rgba(201, 143, 84, 0.22), transparent 62%),
-      radial-gradient(ellipse 50% 40% at 90% 30%, rgba(146, 180, 120, 0.12), transparent 62%);
+      radial-gradient(ellipse 60% 50% at 20% 0%, rgba(154, 96, 48, 0.24), transparent 62%),
+      radial-gradient(ellipse 50% 40% at 90% 30%, rgba(158, 187, 134, 0.12), transparent 62%);
   }
 }
 
@@ -572,7 +575,7 @@ h2[id] { scroll-margin-top: calc(var(--nav-h) + var(--s-4)); }
   width: 64px;
   height: 64px;
   flex-shrink: 0;
-  filter: drop-shadow(0 6px 18px rgba(181, 121, 62, 0.35));
+  filter: drop-shadow(0 6px 18px rgba(154, 96, 48, 0.38));
 }
 .brand-text { display: flex; flex-direction: column; line-height: 1.18; }
 .brand-name {
@@ -1013,9 +1016,9 @@ footer a:hover { color: var(--brand); }
 .field input::placeholder,
 .field textarea::placeholder { color: var(--ink-3); }
 .fb-err {
-  color: #C0392B;
-  background: color-mix(in srgb, #C0392B 10%, var(--surface));
-  border: 1px solid color-mix(in srgb, #C0392B 30%, transparent);
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 10%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--danger) 30%, transparent);
   border-radius: var(--r-md);
   padding: var(--s-3) var(--s-4);
   font-size: var(--t-sm);
