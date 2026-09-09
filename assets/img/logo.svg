@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="烘豆师">
   <defs>
     <linearGradient id="bean" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#9A6030"/>
-      <stop offset="100%" stop-color="#8C5A2B"/>
+      <stop offset="0%" stop-color="#7B4B2A"/>
+      <stop offset="100%" stop-color="#5A3420"/>
     </linearGradient>
   </defs>
   <ellipse cx="32" cy="32" rx="22" ry="28" fill="url(#bean)" transform="rotate(-22 32 32)"/>

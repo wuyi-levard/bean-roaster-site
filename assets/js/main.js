@@ -46,6 +46,7 @@
     btn.setAttribute('data-state', t);
     var ico = btn.querySelector('[data-theme-icon]');
     if (ico) ico.textContent = THEME_ICON[t];
+    applyOnBrand();
   }
 
   function setupTheme() {
@@ -281,10 +282,74 @@
     });
   }
 
+  // ---------- 自选主题色（近似 Android 动态取色）----------
+  var SEED_KEY = 'hds-seed';
+  var SEED_DEFAULT = '#7B4B2A';
+
+  function readSeed() {
+    try {
+      var s = localStorage.getItem(SEED_KEY);
+      if (s && /^#[0-9a-fA-F]{6}$/.test(s)) return s;
+    } catch (e) { /* 忽略 */ }
+    return SEED_DEFAULT;
+  }
+
+  function isDarkNow() {
+    var t = document.documentElement.getAttribute('data-theme');
+    if (t === 'light') return false;
+    if (t === 'dark') return true;
+    return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+
+  function relLuminance(hex) {
+    var m = /^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(hex);
+    if (!m) return 0.5;
+    var f = function (c) {
+      c = parseInt(c, 16) / 255;
+      return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * f(m[1]) + 0.7152 * f(m[2]) + 0.0722 * f(m[3]);
+  }
+
+  /* 按钮前景色随种子亮度切换：浅种子用深字、深种子用白字；深色模式一律深棕字 */
+  function applyOnBrand() {
+    var seed = readSeed();
+    var on = isDarkNow() ? '#3B2417' : (relLuminance(seed) > 0.6 ? '#1C1B1F' : '#FFFFFF');
+    document.documentElement.style.setProperty('--on-brand', on);
+  }
+
+  function applySeed(seed) {
+    document.documentElement.style.setProperty('--seed', seed);
+    applyOnBrand();
+  }
+
+  function setupSeed() {
+    var ctl = document.querySelector('.nav-ctl');
+    if (!ctl) return;
+    var label = document.createElement('label');
+    label.className = 'ctl-seed';
+    label.title = '自选主题色';
+    label.setAttribute('aria-label', '自选主题色');
+    label.innerHTML = '<span class="ctl-icon" aria-hidden="true">🎨</span>' +
+      '<input type="color" data-seed-input value="' + SEED_DEFAULT + '">';
+    ctl.appendChild(label);
+    var input = label.querySelector('[data-seed-input]');
+    input.value = readSeed();
+    applySeed(input.value);
+    input.addEventListener('input', function () {
+      var v = input.value;
+      try { localStorage.setItem(SEED_KEY, v); } catch (e) { /* 忽略 */ }
+      applySeed(v);
+    });
+    var mo = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    if (mo) mo.addEventListener('change', applyOnBrand);
+  }
+
   // ---------- init ----------
   function init() {
     setupLang();
     setupTheme();
+    setupSeed();
     setupCopy();
     setupSmoothScroll();
     setupVersion();

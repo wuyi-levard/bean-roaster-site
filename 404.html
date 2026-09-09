@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n-title="t404.title">页面未找到 · 烘豆师</title>
-  <meta name="theme-color" content="#9A6030">
+  <meta name="theme-color" content="#7B4B2A">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <script>
     (function () {
@@ -13,10 +13,12 @@
         if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
         var l = localStorage.getItem('hds-lang');
         if (l === 'zh-TW' || l === 'en') document.documentElement.lang = l;
+        var s = localStorage.getItem('hds-seed');
+        if (s) document.documentElement.style.setProperty('--seed', s);
       } catch (e) { /* 隐私模式下 localStorage 不可用，忽略 */ }
     })();
   </script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20260906c">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260909a">
 </head>
 <body>
 
@@ -88,7 +90,7 @@
   </div>
 </footer>
 
-<script src="assets/js/i18n.js?v=20260906c"></script>
-<script src="assets/js/main.js?v=20260906c"></script>
+<script src="assets/js/i18n.js?v=20260909a"></script>
+<script src="assets/js/main.js?v=20260909a"></script>
 </body>
 </html>
