@@ -35,6 +35,24 @@
     try { localStorage.setItem(THEME_KEY, t); } catch (e) { /* 忽略 */ }
   }
 
+  /* 判断当前是否处于深色模式（含 auto 跟随系统） */
+  function isDark() {
+    var t = readTheme();
+    if (t === 'dark') return true;
+    if (t === 'light') return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  /* 根据当前主题切换截图明暗版本 */
+  function applyShotTheme() {
+    var d = isDark();
+    document.querySelectorAll('img[data-shot]').forEach(function (img) {
+      var base = img.getAttribute('data-shot');
+      if (!base) return;
+      img.src = d ? base.replace(/\.png$/, '-dark.png') : base;
+    });
+  }
+
   function applyTheme(t) {
     if (t === 'auto') document.documentElement.removeAttribute('data-theme');
     else document.documentElement.setAttribute('data-theme', t);
@@ -46,6 +64,7 @@
     btn.setAttribute('data-state', t);
     var ico = btn.querySelector('[data-theme-icon]');
     if (ico) ico.textContent = THEME_ICON[t];
+    applyShotTheme();
     applyOnBrand();
   }
 
@@ -349,6 +368,7 @@
   function init() {
     setupLang();
     setupTheme();
+    applyShotTheme();
     setupSeed();
     setupCopy();
     setupSmoothScroll();

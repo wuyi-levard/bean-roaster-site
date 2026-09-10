@@ -67,9 +67,9 @@
       'sec.shots.eyebrow': '介面預覽',
       'sec.shots.title': '真實介面，不是渲染稿',
       'sec.shots.desc': '以下截圖為模擬器實際執行畫面，展示 App 在日常烘焙場景中的關鍵頁面。',
-      'shot1.cap': '首次啟動引導 · 3 頁介紹',
+      'shot1.cap': '儀表板 · 庫存概覽與預警',
       'shot2.cap': '烘焙豆庫存 · 批次 + 規格雙計量',
-      'shot3.cap': '生豆烘焙入庫 · 配方 + 成本核算',
+      'shot3.cap': '生豆庫存 · 批次 + 產地溯源',
       'shot4.cap': '訂單工作台 · 現貨/預售雙通道',
 
       /* 資料安全 */
@@ -334,9 +334,9 @@
       'sec.shots.eyebrow': 'Interface Preview',
       'sec.shots.title': 'Real Screens, Not Mockups',
       'sec.shots.desc': 'Screenshots below are actual emulator runs showing key screens from daily roasting work.',
-      'shot1.cap': 'Onboarding · 3 intro screens',
+      'shot1.cap': 'Dashboard · inventory overview & alerts',
       'shot2.cap': 'Roasted Inventory · batch + size dual units',
-      'shot3.cap': 'Green Bean Roast-In · blend + costing',
+      'shot3.cap': 'Green Bean Inventory · batch + origin trace',
       'shot4.cap': 'Order Desk · spot / pre-order',
 
       /* Data security */
