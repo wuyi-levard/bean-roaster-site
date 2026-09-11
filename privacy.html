@@ -100,7 +100,7 @@
       <p data-i18n-html="pv.s2b">业务数据默认保存在 App 私有目录。自动备份可写入你通过系统文件选择器授权的共享目录；共享目录中的备份文件不会因卸载 App 被应用删除，重装后需要重新授权目录。备份可使用口令加密；用户自行保存的共享目录文件由用户自行删除。</p>
 
       <h2 id="s3"><span class="num">3</span><span data-i18n="pv.s3t">网络与权限</span></h2>
-      <p data-i18n-html="pv.s3b">相机仅在你点击扫码或拍照识别时申请，用于扫描 SKU 二维码或拍摄生豆袋标签，OCR 在设备端完成；拒绝后可手工输入、搜索或从系统图片选择器导入。排产提醒使用本地通知，不读取或写入系统日历；只有你主动开启库存预警或排产提醒时，才申请通知权限和 Android 精确闹钟权限，提醒包含提示音和震动。拒绝后仍显示 App 内横幅；精确闹钟被系统关闭时可在系统设置中重新开启。系统文件选择器只读取你明确选择的图片、文件或共享目录。</p>
+      <p data-i18n-html="pv.s3b">相机仅在你点击扫码或拍照识别时申请，用于扫描 SKU 二维码或拍摄生豆袋标签，OCR 在设备端完成；拒绝后可手工输入、搜索或从系统图片选择器导入。排产提醒使用本地通知，不读取或写入系统日历；只有你主动开启库存预警或排产提醒时，才申请通知权限和 Android 精确闹钟权限，提醒包含提示音和震动。拒绝后仍显示 App 内横幅；精确闹钟被系统关闭时可在系统设置中重新开启。Android 版另声明「开机自启」权限，仅用于设备重启后恢复你已设置的排产提醒；该权限不读取任何数据。系统文件选择器只读取你明确选择的图片、文件或共享目录。</p>
 
       <h2 id="s4"><span class="num">4</span><span data-i18n="pv.s4t">离线 OCR 与图片</span></h2>
       <p data-i18n-html="pv.s4b">生豆袋标签识别使用设备端 PaddleOCR 推理，图片始终留在本机，绝不上传。相机原图作为溯源与人工复核来源保留在本地；识别增强副本仅在当前会话缓存，会话结束即清理，不进入备份、导出或学习样本。</p>
@@ -109,7 +109,7 @@
       <p data-i18n-html="pv.s5b">一键导出全部数据为 JSON；可选口令加密采用 <code>AES-256-GCM</code>（PBKDF2-HMAC-SHA256，20 万次迭代）。口令仅你本人持有——忘记口令无法由我们找回，这是有意的设计。</p>
 
       <h2 id="s6"><span class="num">6</span><span data-i18n="pv.s6t">专业版授权</span></h2>
-      <p data-i18n-html="pv.s6b">sqflite/SQLite、provider、fl_chart、file_picker、pdf、image、PaddleOCR/ONNX/OpenCV 仅用于本地数据库、界面、图表、文件、文档、图片和端侧 OCR，不上传 App 业务数据。in_app_purchase（Apple StoreKit / Google Play Billing）仅用于商店购买、恢复交易和判定专业版权益；平台会按自身规则处理交易所需信息，开发者不接收库存、订单或客户业务数据。flutter_local_notifications 仅创建本地库存预警和排产提醒；通知可包含提示音和震动，不读取或写入系统日历。产品不接入统计、广告、崩溃上报、社交登录或云同步 SDK。</p>
+      <p data-i18n-html="pv.s6b">sqflite/SQLite、provider、fl_chart、file_picker、pdf、image、PaddleOCR/ONNX/OpenCV 仅用于本地数据库、界面、图表、文件、文档、图片和端侧 OCR，不上传 App 业务数据。in_app_purchase（Apple StoreKit / Google Play Billing）仅用于商店购买、恢复交易和判定专业版权益；平台会按自身规则处理交易所需信息，开发者不接收库存、订单或客户业务数据。flutter_local_notifications 仅创建本地库存预警和排产提醒；通知可包含提示音和震动，不读取或写入系统日历。dynamic_color（Android 12+ 系统动态取色）仅读取系统主题色调用于界面配色，可在设置中随时关闭，不读取业务数据。产品不接入统计、广告、崩溃上报、社交登录或云同步 SDK。</p>
       <p data-i18n-html="pv.s6c">社区人工授权台账处理购买者名称、店名或昵称、设备申请码和授权码，仅用于授权验证、设备绑定、售后和防滥用。授权有效期内保存；授权失效后保留 2 年，期满删除。台账与 App 本地业务数据库分离，不进入 App 备份，不用于营销或画像。商店版购买与支付由 Apple / Google 处理，我们不收集或存储卡号、账单地址等支付信息。</p>
 
       <h2 id="s7"><span class="num">7</span><span data-i18n="pv.s7t">日志与诊断</span></h2>
@@ -119,7 +119,7 @@
       <p data-i18n-html="pv.s8b">官网由腾讯云轻量应用服务器托管，不接入统计、广告、跨站追踪或用户画像。页面仅使用浏览器本地存储（localStorage）记住主题与语言偏好。反馈表单会将内容预填到 <a class="inline" href="https://github.com/wuyi-levard/bean-roaster-site/issues" target="_blank" rel="noopener">GitHub Issues</a> 并新开标签页，由你登录 GitHub 后确认提交；公开反馈请勿填写客户联系方式、授权码或备份内容，GitHub 侧的数据受其隐私政策约束。</p>
 
       <h2 id="s9"><span class="num">9</span><span data-i18n="pv.s9t">你的权利与控制</span></h2>
-      <p data-i18n-html="pv.s9b">App 不提供账号注册、登录或账号注销。你可以在 App 内清空本机业务数据，或卸载 App 删除 App 私有数据；共享目录中的备份由你自行删除。你可以通过 operations@levard.cn 咨询、请求更正或删除社区授权台账；在资料齐全且无需额外核验的情况下，我们的服务目标是不超过 15 个工作日完成或给出处理结果。该时限是处理承诺，不表述为所有情形下的统一法定期限。</p>
+      <p data-i18n-html="pv.s9b">App 不提供账号注册、登录或账号注销。你可以在 App 内清空本机业务数据，或卸载 App 删除 App 私有数据；共享目录中的备份由你自行删除。你也可以在「设置 → 隐私与权限」撤回本政策的同意；撤回会清除本机业务数据、关闭本地提醒，并返回首次使用时的同意页面。你可以通过 operations@levard.cn 咨询、请求更正或删除社区授权台账；在资料齐全且无需额外核验的情况下，我们的服务目标是不超过 15 个工作日完成或给出处理结果。该时限是处理承诺，不表述为所有情形下的统一法定期限。</p>
 
       <h2 id="s10"><span class="num">10</span><span data-i18n="pv.s10t">儿童隐私</span></h2>
       <p data-i18n-html="pv.s10b">本产品面向咖啡烘焙从业者，不以未成年人为目标用户。我们不会在知情情况下通过 App 建立未成年人账号或画像；如监护人认为存在不当处理，可通过邮箱联系我们核验。</p>
