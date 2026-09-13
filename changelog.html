@@ -76,12 +76,41 @@
       <p data-i18n-html="cl.lead">以下为公开发布版本的能力演进。最新版本 APK 见 <a href="https://github.com/wuyi-levard/bean-roaster-site/releases" target="_blank" rel="noopener">GitHub Releases</a> 或 <a href="https://pan.baidu.com/s/17-IyWG9qE9T9fcUgi1DNUA?pwd=bnyg" target="_blank" rel="noopener">百度网盘</a>。</p>
     </div>
 
-    <!-- v0.2.12 -->
+    <!-- v0.2.13 -->
     <article class="cl-entry current">
+      <div class="cl-head">
+        <span class="ver">v0.2.13</span>
+        <span class="date" data-i18n="cl.v013.date">2026-09-13</span>
+        <span class="cl-tag" data-i18n="cl.tag.new">最新</span>
+      </div>
+      <div class="news-grid">
+        <div class="news-group">
+          <h3 data-i18n="cl.v013.up.title"><span class="news-ico">🛡️</span> 升级与数据</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v013.up.1">修复升级误拒（重要）：迁移收敛为唯一序列并建立三道防线（全版本升级矩阵、发布版真实库 fixtures、SQLite 契约）；此前 0.2.10–0.2.12 用户升级后可能被要求重新导入备份</li>
+            <li data-i18n="cl.v013.up.2">旧烘焙豆模型定为永久归档层并冻结旧写入路径；导出保存失败不再静默（避免「提示成功 + 0 字节文件」）</li>
+          </ul>
+        </div>
+        <div class="news-group">
+          <h3 data-i18n="cl.v013.exp.title"><span class="news-ico">📄</span> 导出稳定性</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v013.exp.1">豆单 PDF 排版压缩移出主 isolate，消除导出时的后台 ANR 断流</li>
+            <li data-i18n="cl.v013.exp.2">限定批量目录写入至移动端，收敛分页</li>
+          </ul>
+          <h3 class="news-sub" data-i18n="cl.v013.ux.title"><span class="news-ico">🎛️</span> 体验修复</h3>
+          <ul class="news-list">
+            <li data-i18n="cl.v013.ux.1">首层两次返回退出；设置页客户名称并入品牌卡片</li>
+            <li data-i18n="cl.v013.ux.2">主题分段按钮三段均分；导出向导冲煮参数区间距与提示完整显示</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- v0.2.12 -->
+    <article class="cl-entry">
       <div class="cl-head">
         <span class="ver">v0.2.12</span>
         <span class="date" data-i18n="cl.v012.date">2026-09-06</span>
-        <span class="cl-tag" data-i18n="cl.tag.new">最新</span>
       </div>
       <div class="news-grid">
         <div class="news-group">
