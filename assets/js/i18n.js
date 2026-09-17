@@ -44,7 +44,7 @@
       'hero.lead': '面向咖啡烘焙從業者的本機生豆 / 烘焙豆庫存管理 App。業務資料只存本機，離線 OCR 自動辨識生豆袋標籤，袋·kg 雙計量與即期預警，烘焙轉化、配方成本與毛利定價一站完成。',
       'hero.dl.github': '↓ GitHub Releases 下載',
       'hero.dl.baidu': '↓ 百度網盤下載',
-      'hero.note': 'Flutter 跨端建置 · Android 12+ / iOS 16+',
+      'hero.note': 'Flutter 跨端建置 · Android 12+ / iOS 18.2+',
 
       /* 核心功能 */
       'sec.features.eyebrow': '核心功能',
@@ -92,7 +92,7 @@
       'sec.plat.desc': 'Flutter / Dart 一套程式碼同時建置 Android 與 iOS 原生應用；UI 遵循 Material 3，支援淺色 / 深色主題與系統跟隨。',
       'pl1.lbl': '框架', 'pl1.val': 'Flutter 3.44', 'pl1.sub': 'Dart 3.12 · Material 3',
       'pl2.lbl': 'Android', 'pl2.val': '12+', 'pl2.sub': 'API 31 · 離線 OCR 端側推論',
-      'pl3.lbl': 'iOS', 'pl3.val': '16.0+', 'pl3.sub': 'App Store / TestFlight 管道',
+      'pl3.lbl': 'iOS', 'pl3.val': '18.2+', 'pl3.sub': 'App Store / TestFlight 管道',
       'pl4.lbl': '持久化', 'pl4.val': 'SQLite', 'pl4.sub': 'sqflite 交易寫入 + 備份 JSON',
       'pl5.lbl': 'OCR', 'pl5.val': 'PaddleOCR', 'pl5.sub': 'ONNX Runtime + OpenCV（端側）',
       'pl6.lbl': '加密', 'pl6.val': 'AES-256-GCM', 'pl6.sub': 'PBKDF2 · 20 萬次迭代',
@@ -321,7 +321,7 @@
       'hero.lead': 'A local green and roasted bean inventory app for coffee roasters. Business data never leaves your device; offline OCR reads green-bean bag labels; dual bag·kg units with expiry alerts; roast conversion, blend costing and margin pricing in one place.',
       'hero.dl.github': '↓ Download via GitHub Releases',
       'hero.dl.baidu': '↓ Download via Baidu Netdisk',
-      'hero.note': 'Cross-platform Flutter · Android 12+ / iOS 16+',
+      'hero.note': 'Cross-platform Flutter · Android 12+ / iOS 18.2+',
 
       /* Features */
       'sec.features.eyebrow': 'Core Features',
@@ -369,7 +369,7 @@
       'sec.plat.desc': 'One Flutter/Dart codebase builds native Android and iOS apps; the UI follows Material 3 with light and dark themes plus system following.',
       'pl1.lbl': 'Framework', 'pl1.val': 'Flutter 3.44', 'pl1.sub': 'Dart 3.12 · Material 3',
       'pl2.lbl': 'Android', 'pl2.val': '12+', 'pl2.sub': 'API 31 · on-device OCR',
-      'pl3.lbl': 'iOS', 'pl3.val': '16.0+', 'pl3.sub': 'App Store / TestFlight',
+      'pl3.lbl': 'iOS', 'pl3.val': '18.2+', 'pl3.sub': 'App Store / TestFlight',
       'pl4.lbl': 'Persistence', 'pl4.val': 'SQLite', 'pl4.sub': 'sqflite transactions + backup JSON',
       'pl5.lbl': 'OCR', 'pl5.val': 'PaddleOCR', 'pl5.sub': 'ONNX Runtime + OpenCV (on-device)',
       'pl6.lbl': 'Encryption', 'pl6.val': 'AES-256-GCM', 'pl6.sub': 'PBKDF2 · 200k iterations',
