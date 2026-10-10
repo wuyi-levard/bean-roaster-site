@@ -75,7 +75,7 @@
         <span class="eyebrow" data-i18n="pv.eyebrow">隐私政策</span>
         <h1 data-i18n="pv.h1">隐私政策</h1>
       </div>
-      <p class="text-muted updated" data-i18n="pv.updated">政策版本：2026-09-03.v1 · 生效日期：2026 年 9 月 3 日 · 个人信息处理者：林云</p>
+      <p class="text-muted updated" data-i18n="pv.updated">政策版本：2026-10-10.v1 · 生效日期：2026 年 10 月 10 日 · 个人信息处理者：林云</p>
       <p class="intro" data-i18n-html="pv.intro">烘豆师（HongDouShi）是一款面向咖啡烘焙从业者的本地优先库存管理 App。本政策说明我们如何处理与 App 及官网相关的数据、权限和平台服务。App 默认不将业务数据上传到开发者服务器；官网由腾讯云轻量应用服务器托管并仅处理必要访问日志。</p>
 
       <ul class="policy-toc">
@@ -91,6 +91,7 @@
         <li><a href="#s10" data-i18n="pv.s10t">儿童隐私</a></li>
         <li><a href="#s11" data-i18n="pv.s11t">政策变更</a></li>
         <li><a href="#s12" data-i18n="pv.s12t">联系我们</a></li>
+        <li><a href="#s13" data-i18n="pv.s13t">iOS 与 App Store 说明</a></li>
       </ul>
 
       <h2 id="s1"><span class="num">1</span><span data-i18n="pv.s1t">我们收集哪些数据</span></h2>
@@ -109,8 +110,8 @@
       <p data-i18n-html="pv.s5b">一键导出全部数据为 JSON；可选口令加密采用 <code>AES-256-GCM</code>（PBKDF2-HMAC-SHA256，20 万次迭代）。口令仅你本人持有——忘记口令无法由我们找回，这是有意的设计。</p>
 
       <h2 id="s6"><span class="num">6</span><span data-i18n="pv.s6t">专业版授权</span></h2>
-      <p data-i18n-html="pv.s6b">sqflite/SQLite、provider、fl_chart、file_picker、pdf、image、PaddleOCR/ONNX/OpenCV 仅用于本地数据库、界面、图表、文件、文档、图片和端侧 OCR，不上传 App 业务数据。in_app_purchase（Apple StoreKit / Google Play Billing）仅用于商店购买、恢复交易和判定专业版权益；平台会按自身规则处理交易所需信息，开发者不接收库存、订单或客户业务数据。flutter_local_notifications 仅创建本地库存预警和排产提醒；通知可包含提示音和震动，不读取或写入系统日历。dynamic_color（Android 12+ 系统动态取色）仅读取系统主题色调用于界面配色，可在设置中随时关闭，不读取业务数据。产品不接入统计、广告、崩溃上报、社交登录或云同步 SDK。</p>
-      <p data-i18n-html="pv.s6c">社区人工授权台账处理购买者名称、店名或昵称、设备申请码和授权码，仅用于授权验证、设备绑定、售后和防滥用。授权有效期内保存；授权失效后保留 2 年，期满删除。台账与 App 本地业务数据库分离，不进入 App 备份，不用于营销或画像。商店版购买与支付由 Apple / Google 处理，我们不收集或存储卡号、账单地址等支付信息。</p>
+      <p data-i18n-html="pv.s6b">sqflite/SQLite、provider、fl_chart、file_picker、pdf、image、PaddleOCR/ONNX/OpenCV 仅用于本地数据库、界面、图表、文件、文档、图片和端侧 OCR，不上传 App 业务数据。iOS 使用原生 Apple StoreKit 2，Android 商店版使用 in_app_purchase / Google Play Billing，仅用于商店购买、恢复交易和判定专业版权益；平台会按自身规则处理交易所需信息，开发者不接收库存、订单或客户业务数据。flutter_local_notifications 仅创建本地库存预警和排产提醒，通知可包含提示音和震动，不读取或写入系统日历。dynamic_color（Android 12+ 系统动态取色）仅读取系统主题色调用于界面配色，可在设置中随时关闭，不读取业务数据。产品不接入统计、广告、崩溃上报、社交登录或云同步 SDK。</p>
+      <p data-i18n-html="pv.s6c">社区授权台账仅适用于 Android 社区版，iOS App Store 版不使用该台账。人工授权台账处理购买者名称、店名或昵称、设备申请码和授权码，仅用于授权验证、设备绑定、售后和防滥用。授权有效期内保存；授权失效后保留 2 年，期满删除。台账与 App 本地业务数据库分离，不进入 App 备份，不用于营销或画像。</p>
 
       <h2 id="s7"><span class="num">7</span><span data-i18n="pv.s7t">日志与诊断</span></h2>
       <p data-i18n-html="pv.s7b">App 仅在本地保留最近 50 条错误日志，用于你自行排查，可手动导出；默认不会发送给我们。官网由腾讯云轻量应用服务器托管，按已完成备案的正式站点运行。Web 服务记录 IP、请求时间、请求路径、响应状态和 User-Agent 等必要访问日志，仅用于安全、防攻击和故障排查；日志按 7 天保留并自动删除。</p>
@@ -129,6 +130,11 @@
 
       <h2 id="s12"><span class="num">12</span><span data-i18n="pv.s12t">联系我们</span></h2>
       <p data-i18n-html="pv.s12b">关于隐私的任何疑问、权利请求或社区授权台账处理，请通过邮箱 <a class="inline" href="mailto:operations@levard.cn">operations@levard.cn</a> 联系。邮件沟通内容按邮件服务商的隐私政策处理。</p>
+
+      <h2 id="s13"><span class="num">13</span><span data-i18n="pv.s13t">iOS 与 App Store 说明</span></h2>
+      <p data-i18n-html="pv.s13b">iOS App Store 版提供月、季度、年自动续费订阅及终生买断，由 Apple StoreKit 2 处理购买和恢复交易。App 在本机读取商品标识、已验证的专业版权益、有效截止时间、自动续费及宽限期状态，仅用于解锁功能和显示订阅状态。这些权益信息仅保存在 App 私有缓存，不进入业务备份，不向开发者服务器上传。支付方式、账单及 Apple 账户信息由 Apple 按其隐私政策处理；App 不读取或保存银行卡号、账单地址或 Apple 账户凭据。恢复购买及管理订阅通过 Apple 系统服务完成。</p>
+      <p data-i18n-html="pv.s13c">iOS 自动备份默认使用口令加密；加密模式下需要先设置口令、通过系统文件选择器授权应用外目录并启用自动备份，完成前不会生成自动备份。启用后，App 启动时按设定频率检查并保存，也可主动立即备份，不保证 App 关闭时后台定时执行。口令保存在本机 Keychain，不同步到 iCloud 钥匙串，请自行另存以便恢复。所选目录中的备份由你管理；应用不会主动上传备份，若选择 iCloud Drive 或其他云文件提供方，同步由系统或该提供方按其规则管理。在 iPhone「文件」App 查看备份；「我的 iPhone」中的外部目录不会直接显示在 Mac Finder 文件共享列表，需要分享或传送到 Mac。</p>
+      <p data-i18n-html="pv.s13d">iOS 相机用于扫描 SKU 二维码和拍摄标签；图片选择器只读取你主动选择的图片，本地提醒仅申请通知权限。iOS 版不申请 Android 精确闹钟或开机自启权限，也不进行广告跟踪。</p>
 
       <div class="btn-row btn-row--start policy-back">
         <a class="btn btn-ghost" href="index.html" data-i18n="foot.home">回到首页</a>
@@ -154,7 +160,7 @@
   </div>
 </footer>
 
-<script src="assets/js/i18n.js?v=20260921"></script>
+<script src="assets/js/i18n.js?v=20261010privacy"></script>
 <script src="assets/js/main.js?v=20260909a"></script>
 </body>
 </html>
