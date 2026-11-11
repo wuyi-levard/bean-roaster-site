@@ -75,7 +75,7 @@
         <span class="eyebrow" data-i18n="pv.eyebrow">隐私政策</span>
         <h1 data-i18n="pv.h1">隐私政策</h1>
       </div>
-      <p class="text-muted updated" data-i18n="pv.updated">政策版本：2026-11-11.v1 · 生效日期：2026 年 11 月 11 日 · 个人信息处理者：林云</p>
+      <p class="text-muted updated" data-i18n="pv.updated">政策版本：2026-11-12.v1 · 生效日期：2026 年 11 月 12 日 · 个人信息处理者：林云</p>
       <p class="intro" data-i18n-html="pv.intro">烘豆师（HongDouShi）是一款面向咖啡烘焙从业者的本地优先库存管理 App。本政策说明我们如何处理与 App 及官网相关的数据、权限和平台服务。App 默认不将业务数据上传到开发者服务器；官网由腾讯云轻量应用服务器托管并仅处理必要访问日志。</p>
 
       <ul class="policy-toc">
@@ -111,7 +111,7 @@
 
       <h2 id="s6"><span class="num">6</span><span data-i18n="pv.s6t">专业版授权</span></h2>
       <p data-i18n-html="pv.s6b">sqflite/SQLite、provider、fl_chart、file_picker、pdf、image、PaddleOCR/ONNX/OpenCV 仅用于本地数据库、界面、图表、文件、文档、图片和端侧 OCR，不上传 App 业务数据。iOS 使用原生 Apple StoreKit 2，Android 商店版使用 in_app_purchase / Google Play Billing，仅用于商店购买、恢复交易和判定专业版权益；平台会按自身规则处理交易所需信息，开发者不接收库存、订单或客户业务数据。flutter_local_notifications 仅创建本地库存预警和排产提醒，通知可包含提示音和震动，不读取或写入系统日历。dynamic_color（Android 12+ 系统动态取色）仅读取系统主题色调用于界面配色，可在设置中随时关闭，不读取业务数据。产品不接入统计、广告、崩溃上报、社交登录或云同步 SDK。</p>
-      <p data-i18n-html="pv.s6c">社区授权仅适用于 Android 社区版，iOS App Store 版不使用。V1 使用 Android Keystore 密钥及公钥摘要进行设备证明，卸载会删除该密钥，原 V1 授权码不能因此恢复。V2 读取 Widevine 设备标识，仅在内存中结合每次申请的随机盐计算摘要；原始标识不落盘，也不联网发送。App 不自动向发行方发送申请材料，由你主动提交含摘要和申请编号的申请码；迁移时还需提交原 V1 授权及密钥证明。V2 新申请和签发仅对已验收的完整系统环境开放，未列名环境不开放；系统更新后须重新核对支持范围。</p>
+      <p data-i18n-html="pv.s6c">社区授权仅适用于 Android 社区版，iOS App Store 版不使用。V1 使用 Android Keystore 密钥及公钥摘要进行设备证明，卸载会删除该密钥，原 V1 授权码不能因此恢复。V2 读取 Widevine 设备标识，仅在内存中结合每次申请的随机盐计算摘要；原始标识不落盘，也不联网发送。App 不自动向发行方发送申请材料，由你主动提交含摘要和申请编号的申请码；迁移时还需提交原 V1 授权及密钥证明。V2 新申请和签发默认向所有 DRM 可用的系统环境开放，已知受限或不支持的环境除外；默认开放不代表所有环境均已验收，系统更新后仍须验证 DRM 绑定。</p>
       <p data-i18n-html="pv.s6d">人工授权台账处理购买者名称、店名或昵称、申请码、授权码、设备绑定摘要、申请/授权编号、订单/授权席位键、签发时间与版本、证书摘要、支持名单版本与条目、签发用途，以及迁移或补签的来源关系、证明摘要和人工核对说明，仅用于授权验证、设备绑定、售后和防滥用。台账加密并与 App 本地业务数据库分离，不进入 App 备份，不用于营销或画像。授权有效期内保存；授权失效后保留 2 年，期满删除。</p>
       <p data-i18n-html="pv.s6e">V2 完整授权证书由你通过系统文件选择器保存为应用外的 .brlicense 文件；应用私有目录只保存授权元数据、摘要和文件 URI，完整证书不写入 App 私有缓存、业务数据库、业务备份或日志。每次冷启动须重新读取文件并验证，删除、遗失或无法读取时不凭缓存开放专业版；卸载后须重新选择文件，仍需 DRM 绑定匹配。恢复出厂或刷机可能改变 DRM 标识，不保证旧证书可恢复。授权文件不是业务数据备份，恢复业务数据不会自动恢复专业版。若选择云文件提供方，同步由系统或该提供方按其规则管理，不由 App 主动上传；离线可用范围不承诺云提供方或可移除介质。</p>
 
@@ -162,7 +162,7 @@
   </div>
 </footer>
 
-<script src="assets/js/i18n.js?v=20261111privacy"></script>
+<script src="assets/js/i18n.js?v=20261112privacy"></script>
 <script src="assets/js/main.js?v=20260909a"></script>
 </body>
 </html>
